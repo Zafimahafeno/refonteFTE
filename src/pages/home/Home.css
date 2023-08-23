@@ -1,0 +1,67 @@
+.landing-page{
+  width: 100%;
+  height: 100vh;
+  background: url('../../img/hero-bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  z-index: -1;
+  opacity: 0.8;
+}
+.landing-header{
+  
+  z-index: 5;
+  display: flex;
+}
+.landing-header-logo
+{
+  flex-basis: 20%;
+  margin-left: 5%;
+}
+.landing-header-logo img{
+  width: 140px;
+  height: 80px;
+ 
+}
+.landing-nav{
+  margin: 1% 0 0 25%;
+  flex-basis: 32%;
+}
+.landing-nav ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+ 
+}
+.landing-nav li{
+  list-style: none;
+}
+.nav-content {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+
+
+}
+.nav-content:hover {
+ 
+  border-bottom: 1px solid rgb(255, 252, 252);
+
+}
+
+/* .landing-page {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh; 
+}
+
+.landing-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../../img/hero-bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  z-index: -1;
+  opacity: 0.5;
+} */

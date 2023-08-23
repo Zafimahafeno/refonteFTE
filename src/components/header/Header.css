@@ -1,0 +1,45 @@
+.container{
+ 
+  display: flex;
+  flex-direction: row;
+  padding: 0 3%;
+  
+}
+.logo-fte
+{
+  width: 40%;
+}
+.logo-fte img
+{
+  width: 140px;
+  height: 80px;
+}
+.nav-bar{
+  padding: 1% 0 0 15%;
+  flex-basis: 32%;
+  
+  
+}
+.nav-bar ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+ 
+}
+.nav-bar li{
+  list-style: none;
+}
+.nav-content {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+
+
+}
+.nav-content:hover {
+ 
+  border: 1px solid rgb(9, 9, 9);
+
+}
+
+
+
