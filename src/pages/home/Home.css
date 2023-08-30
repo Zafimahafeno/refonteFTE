@@ -1,67 +1,90 @@
-.landing-page{
-  width: 100%;
-  height: 100vh;
-  background: url('../../img/hero-bg.jpg') no-repeat center center fixed;
-  background-size: cover;
-  z-index: -1;
-  opacity: 0.8;
-}
-.landing-header{
-  
-  z-index: 5;
+.form-group {
   display: flex;
-}
-.landing-header-logo
-{
-  flex-basis: 20%;
-  margin-left: 5%;
-}
-.landing-header-logo img{
-  width: 140px;
-  height: 80px;
- 
-}
-.landing-nav{
-  margin: 1% 0 0 25%;
-  flex-basis: 32%;
-}
-.landing-nav ul{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
- 
-}
-.landing-nav li{
-  list-style: none;
-}
-.nav-content {
-  text-decoration: none;
-  color: rgb(255, 255, 255);
-
-
-}
-.nav-content:hover {
- 
-  border-bottom: 1px solid rgb(255, 252, 252);
-
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  height: 5vh;
 }
 
-/* .landing-page {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: 100vh; 
-}
-
-.landing-page::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('../../img/hero-bg.jpg') no-repeat center center fixed;
+body{
+  background: url(img3.jpg);
   background-size: cover;
-  z-index: -1;
-  opacity: 0.5;
-} */
+}
+
+.titre{
+    transform: translate(-50%, -50%);
+    margin-left: 150px;
+    margin-top: 35px;
+   
+}
+
+.titre h1{
+  font-size: 55px;
+  color: transparent;
+  -webkit-text-stroke: 1.5px #0c0c0c;
+
+}
+
+.titre sub{
+  font-size: 20px;
+  color: transparent;
+  -webkit-text-stroke: 1.5px #0c0c0c;
+}
+
+
+.contact__form .form-control{
+  padding: 1.375rem .75rem;
+  line-height: 1.5;
+  color: #ffffff;
+  background-color: #0c0c0c;
+  border-radius: 0 !important;
+  border: 1px solid #ffff;
+}
+
+.contact__form .form-control{
+  margin-bottom: 2em ;
+  height: calc(2.5 em + .75rem +2px);
+}
+
+.form-button .btn{
+  color: white;
+  border:10px;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #228B22; /*#d5b286*/
+}
+
+/*.form-button .btn:hover{
+  color:white;
+}*/
+
+.icon{
+  margin-right: 10px;
+  align-items: center;
+  text-align: center;
+  margin-top: 55px;
+  font-size: 24px;
+}
+
+.space {
+  width: 15px; /* Ajustez la largeur de l'espace selon vos besoins */
+  display: inline-block;
+}
+
+/* CSS media queries */
+
+@media(max-width: 800px) {
+  body {
+    background-color: lightblue;
+  }
+}
+
+@media(min-width: 800px){
+  body{
+    background-color: #0c0c0c;
+  }
+}
