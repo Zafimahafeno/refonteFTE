@@ -18,6 +18,9 @@ import 'swiper/css';
 
 
 
+
+
+
 const Home = () => {
   const [isVisible, setIsVisible] = useState(false);
   // Définir l'animation de fondu
@@ -43,6 +46,7 @@ const Home = () => {
 
 
   return (
+
     <div className="container">
      <div className="landing-page">
          <div className="landing-header"> 
@@ -246,6 +250,7 @@ const Home = () => {
         </Swiper>
       </div>
     </div>
+
   );
 };
 
