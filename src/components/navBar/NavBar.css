@@ -1,0 +1,51 @@
+.navBar{
+    display: flex;
+    background-color:rgba(0,0,0, 0.5);
+    position: fixed;
+    width: 100%;
+    top: -1%;
+}
+.nav-content{
+    flex-basis: 40%;
+    padding: 0 0 0 18%;
+    margin: 0;
+}
+.nav-content ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+}
+.nav-content ul li{
+    list-style: none;
+  
+    padding: 5% 2%;
+    margin: 0;
+    
+    
+}
+
+.navLink{
+    text-decoration: none;
+    color:#fff;
+}
+.nav-content ul li:hover{
+    background-color: #f82249;
+}
+
+.fade-up-down {
+    opacity: 0;
+    transform: translateY(100px);
+  
+    transition: opacity 2s ease-in-out, transform 2s ease-in-out;
+  
+    &.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  
+    &.fade-up-down-in-progress {
+      opacity: 0.5;
+      transform: translateY(-50px);
+    }
+  }
