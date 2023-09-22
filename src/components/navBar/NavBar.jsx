@@ -39,6 +39,29 @@ const NavBar = () => {
         transform: isScrolled ? 'translateY(0)' : 'translateY(-10%)',
     });
     const [showDropdown, setShowDropdown] = useState(false);
+    const [dropdownHover, setDropdownHover] = useState(false);
+    const handleMouseEnter = () => {
+      setShowDropdown(true);
+    };
+  
+    const handleMouseLeave = () => {
+      if (!dropdownHover) {
+        setShowDropdown(false);
+      }
+    };
+  
+    const handleClick = () => {
+      setShowDropdown(!showDropdown);
+    };
+  
+    const handleDropdownMouseEnter = () => {
+      setDropdownHover(true);
+    };
+  
+    const handleDropdownMouseLeave = () => {
+      setDropdownHover(false);
+    };
+  
     return (
         <animated.nav style={navBarAnimation} className={isScrolled ? "navBar scrolled" : "navBar notScrolled"}>
             <div className="navbar-logo">
@@ -73,20 +96,27 @@ const NavBar = () => {
         <li>
         
           <div 
-          className="navLink" id="dropdown"
-          onClick={() => setShowDropdown(!showDropdown)}
+          className={`navLink ${showDropdown ? 'active' : ''}`} id="dropdown"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          onClick={handleClick}
           >
             Je participe
           </div>
           { showDropdown &&(
-            <ul className="dropdown-content">
+            <ul className="dropdown-content"
+            onMouseEnter={handleDropdownMouseEnter}
+            onMouseLeave={handleDropdownMouseLeave}
+            >
             <li>
                 <NavLink
                   to="/Reservation"
                   onClick={() => {
                     setActiveLink("Reservation");
-                    setShowDropdown(false);
+                    setShowDropdown(true);
                   }}
+                  
+                  className="dropdown-navlink"
                 >
                   Reservation
                 </NavLink>
@@ -98,6 +128,7 @@ const NavBar = () => {
                     setActiveLink("Partenariat");
                     setShowDropdown(false);
                   }}
+                  className="dropdown-navlink"
                 >
                   Partenariat
                 </NavLink>
@@ -105,6 +136,7 @@ const NavBar = () => {
             </ul>
           )}
         </li>
+        
        
       </ul>
 

@@ -97,7 +97,7 @@ const Darkhome = () =>{
               <div className="about-content" id='about'>
                   {/* <div className="tiret"></div> */}
                   <div className="about-titre">
-                    <h2> A propos </h2>
+                    <h2> C'est quoi <span className="titre-colore">FIANARA TECH EXPO</span> ?</h2>
                   </div>
     
                   <div className="about-para">
@@ -126,23 +126,23 @@ const Darkhome = () =>{
                                 </div>
                                 
                                 <div className="pro-info">
-                                    <h1 className="pro-titre">
+                                    <h3 className="pro-titre">
                                        Salon des entreprises
-                                    </h1>
+                                    </h3>
                                     <p className="pro-descri">
                                         Divers stands des  differentes entreprises dans le pays. 
                                     </p>
                                     <a href="/">Decouvrir le programme</a>
                                 </div>
                             </div>
-                            <div className="pro-boite">
+                            <div className="pro-boite bas">
                               <div className="pro-image">
                                     <img src={imagepro2} alt=""/>
                                 </div>
                                 <div className="pro-info">
-                                    <h1 className="pro-titre">
+                                    <h3 className="pro-titre">
                                        Masterclass
-                                    </h1>
+                                    </h3>
                                     <p className="pro-descri">
                                         Différents Masterclass 
                                     </p>
@@ -154,38 +154,26 @@ const Darkhome = () =>{
                                     <img src={imagepro3} alt=""/>
                                 </div>
                                 <div className="pro-info">
-                                    <h1 className="pro-titre">
+                                    <h3 className="pro-titre">
                                          Jeu et concours 
-                                    </h1>
+                                    </h3>
                                     <p className="pro-descri">
                                         Participer au divers jeu et concours
                                     </p>
                                     <a href="/">Decouvrir le programme</a>
                                 </div>
                             </div>
-                            <div className="pro-boite">
+                            <div className="pro-boite bas">
                               <div className="pro-image">
                                     <img src={imagepro4} alt=""/>
                                 </div>
                                 <div className="pro-info">
-                                    <h1 className="pro-titre">
+                                    <h3 className="pro-titre">
                                         Hackathon
-                                    </h1>
+                                    </h3>
                                     <p className="pro-descri">
                                         
                                     </p>
-                                    <a href="/">Decouvrir le programme</a>
-                                </div>
-                            </div>
-                            <div className="pro-boite">
-                               <div className="pro-image">
-                                    <img src={imagepro5} alt=""/>
-                                </div>
-                                <div className="pro-info">
-                                    <h1 className="pro-titre">
-                                      Un After Party
-                                    </h1>
-                                    <p className="pro-descri"></p>
                                     <a href="/">Decouvrir le programme</a>
                                 </div>
                             </div>

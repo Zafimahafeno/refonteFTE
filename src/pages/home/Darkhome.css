@@ -68,6 +68,8 @@ body{
   
    font-size: 20px;
  }
+
+ 
  
  .about-btn {
  
@@ -205,7 +207,7 @@ body{
  /* ********************************** */
 
  /*########section du a propos ######***/
- .about-section
+ .about-content
  {
    padding: 5% 0;
  }
@@ -226,8 +228,20 @@ body{
  .about-para p{
   box-sizing: 0;
  }
+
+ .titre-colore{
+  background: linear-gradient(to right, #8400ff, #120079, #4ef3ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative; 
+  display: inline-block; 
+  padding-bottom: 5px; 
+ }
+
+
+
   
- 
+/*  
  .tiret{
    
   
@@ -238,7 +252,7 @@ body{
    bottom: 0;
   margin: 2% 0 2% 48%;
  }
- 
+  */
  /********** responsivité********* */
  
  @media screen and (max-width : 500px){
@@ -266,39 +280,29 @@ body{
 
 
 .fte-pro{
-  /* background-color:#933cb572 ; */
+  background-color:#0a011bc8 ;
   /* background: url('../../img/linear-bg2.jfif')  ; */
   padding:5% 0;
   /* height: 70vh; */
 }
 .pro-container{
-  margin-left:10% ;
+  margin: 5% 0 10% 10%;
    width: 80%;
- display: grid;
- grid-template-columns: repeat(3, 1fr );
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 28px; /* Réduire l'espace entre les colonnes à 5 pixels */
-    grid-row-gap: 30px;
-   
+  display: flex;
+  flex-direction: row;
+  
 }
 .pro-boite{
-  width: 100% ;
-  height: 70vh;
-  /* border: 1px solid #b574f1d1; */
+  margin-left: 5%;
   display: flex;
   flex-direction: column;
-  /* box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1), 0 1px 2px -1px rgba(0,0,0,0.1); */
-  border-radius: 25px;
-  background: rgba(255, 255, 255, 0.129);
-/* box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 ); */
-backdrop-filter: blur( 4px );
--webkit-backdrop-filter: blur( 4px );
-border-radius: 10px;
-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
-
-overflow: hidden;
   
+  border-right: 3px solid white;
  
+ 
+}
+ .bas{
+   margin-top: 15%;
 }
 .pro-image{
   width: 100%;
@@ -312,9 +316,14 @@ overflow: hidden;
   
   
 }
+
 .pro-info{
   margin: 0 2%;
-  
+  text-align: right;
+  padding-right: 4%;
+}
+.pro-descri{
+  font-size: 14px;
 }
 .pro-info a{
   color: white;
