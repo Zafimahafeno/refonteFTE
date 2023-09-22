@@ -6,7 +6,19 @@ import fte from "../../img/fte.png";
 
 const NavBar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
-
+    const [navbarActive, setNavbarActive] = useState("navbar-content");
+    const [toggleIcon, setToggleIcon] = useState("navbar-toggle");
+    const [activeLink, setActiveLink] = useState("");
+  
+    const navToggle = () => {
+      if (navbarActive === "navbar-content") {
+        setNavbarActive("navbar-content navbar-active");
+        setToggleIcon("navbar-toggle toggle");
+      } else {
+        setNavbarActive("navbar-content");
+        setToggleIcon("navbar-toggle");
+      }
+    };
     const handleScroll = () => {
         if (window.scrollY > 100) {
             setIsScrolled(true);
@@ -24,35 +36,86 @@ const NavBar = () => {
 
     const navBarAnimation = useSpring({
         opacity: isScrolled ? 1 : 0,
-        transform: isScrolled ? 'translateY(0)' : 'translateY(-100%)',
+        transform: isScrolled ? 'translateY(0)' : 'translateY(-10%)',
     });
-
+    const [showDropdown, setShowDropdown] = useState(false);
     return (
-        <animated.nav style={navBarAnimation} className={isScrolled ? "navBar scrolled" : "navBar"}>
-            <div className="landing-header-logo">
-                <img src={fte} alt="Logo" />
+        <animated.nav style={navBarAnimation} className={isScrolled ? "navBar scrolled" : "navBar notScrolled"}>
+            <div className="navbar-logo">
+             <a href="/">
+                 <img src={fte} alt="" />
+             </a>
             </div>
-            <div className="nav-content" >
-                <ul>
-                    <li>
-                        <NavLink className='navLink ' to="/">Accueil</NavLink>
-                    </li>
-                    <li>
-                        <NavLink className='navLink ' to="/programme">Programme</NavLink>
-                    </li>
-                    <li>
-                        <NavLink className='navLink ' to="/reservation">Réservation</NavLink>
-                    </li>   
-                    <li>
-                        <NavLink className='navLink' to="/jeu-et-concours">Jeu et Concours</NavLink>
-                    </li>
-                    <li>
-                        <NavLink className='navLink' to="/contact">Contact</NavLink>
-                    </li>
-                </ul>
-            </div>
+            <ul className={navbarActive}>
+                <li>
+                <NavLink className={activeLink === "Accueil" ? "navLink active" : "navLink"} to="/" onClick={() => setActiveLink("Accueil")}>
+            Accueil
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            className={activeLink === "Programme" ? "navLink active" : "navLink"}
+            to="/Programme"
+            onClick={() => setActiveLink("Programme")}
+          >
+            Programme
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            className={activeLink === "Reservation" ? "navLink active" : "navLink"}
+            to="/Reservation"
+            onClick={() => setActiveLink("Réservation")}
+          >
+            Concours
+          </NavLink>
+        </li>
+        <li>
+        
+          <div 
+          className="navLink" id="dropdown"
+          onClick={() => setShowDropdown(!showDropdown)}
+          >
+            Je participe
+          </div>
+          { showDropdown &&(
+            <ul className="dropdown-content">
+            <li>
+                <NavLink
+                  to="/Reservation"
+                  onClick={() => {
+                    setActiveLink("Reservation");
+                    setShowDropdown(false);
+                  }}
+                >
+                  Reservation
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/Partenariat"
+                  onClick={() => {
+                    setActiveLink("Partenariat");
+                    setShowDropdown(false);
+                  }}
+                >
+                  Partenariat
+                </NavLink>
+              </li>
+            </ul>
+          )}
+        </li>
+       
+      </ul>
+
+      <div onClick={navToggle} className={toggleIcon}>
+        <div className="line1"></div>
+        <div className="line2"></div>
+        <div className="line3"></div>
+      </div>
         </animated.nav>
     );
 }
 
 export default NavBar;
+
