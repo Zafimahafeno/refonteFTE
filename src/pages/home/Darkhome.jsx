@@ -6,7 +6,7 @@ import background from "../../img/landing-bg.mp4";
 import Sidebar from '../../components/Sidebar/sidebar';
 import NavBar from '../../components/navBar/NavBar';
 import Masterclass from "../../components/masterclass/masterclass";
-
+import fteAbout from "../../img/fteA.png";
 import Slider from '../../components/slider/slider'
 
 
@@ -97,7 +97,8 @@ const Darkhome = () =>{
               <div className="about-content" id='about'>
                   {/* <div className="tiret"></div> */}
                   <div className="about-titre">
-                    <h2> C'est quoi <span className="titre-colore">FIANARA TECH EXPO</span> ?</h2>
+                    <h2> Parlons un peu de  </h2>
+                    <div className="titre-colore"><img src={fteAbout} alt="" /></div>
                   </div>
     
                   <div className="about-para">
@@ -112,9 +113,9 @@ const Darkhome = () =>{
                 {/* section programme */}
 
                 <div className="fte-pro">
-                    <div className="titre-container">
+                    <div className="pro-titre-container">
                         {/* <div className="tiret"></div> */}
-                            <div className="about-titre">
+                            <div className="pro-about-titre">
                                 <h2>Au programme </h2>
                                 <p>Retrouvez les divers activités durant FIANARA TECH EXPO </p>
                             </div>
@@ -180,11 +181,14 @@ const Darkhome = () =>{
                         </div>
                     </div>
              </div>
+                {/* section masterclass */}
+              <Masterclass/>
+
+              
                {/* ****section de presentation des organisateurs */}
                <Slider/>
 
-             {/* section masterclass */}
-              {/* <Masterclass/> */}
+          
 
                {/* le bouton back to top  */}
                {showBackToTop && (

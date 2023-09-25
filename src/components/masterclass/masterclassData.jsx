@@ -3,28 +3,28 @@
 const MasterclassData = [
     {
       id: 1,
-      src: 'image2.png',
+      src: 'masterclass1.png',
       title: "Theme du masterclass",
       name:'Marc Zuckemberg',
       fonction:'sa fonction',
     },
     {
       id: 2,
-      src: 'image3.png',
+      src: 'masterclas2.png',
       title: "Theme du masterclass",
       name:'Elon Musk',
       fonction:'sa fonction',
     },
     {
       id: 3,
-      src: 'image4.png',
+      src: 'masterclass3.png',
       title: "Theme du masterclass",
       name:'Jack M',
       fonction:'sa fonction',
     },
     {
       id: 4,
-      src:'image5.png',
+      src:'masterclass4.png',
       title: "Theme du masterclass",
       name:'Jeff B',
       fonction:'sa fonction',

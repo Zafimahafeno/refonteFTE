@@ -1,10 +1,12 @@
 .slider-container{
     /* border: 1px solid #000; */
+    background: url('../../../public/a2.jpg');
+    background-size: cover;
 }
 .slider{
     width: 100%;
     height: 90vh;
-    background: url('../../../public/back5.jpg');
+    background: url('../../../public/a1.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-color:#000000 ;
