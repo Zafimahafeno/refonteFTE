@@ -27,45 +27,45 @@ const Masterclass = () => {
         <div className="titre-container">
            <div className="tiret"></div>
            <div className="about-titre">
-               <h2>Qui sont les organisateurs?</h2>
+               <h2></h2>
            </div>
         </div>
-                        
+               
        
          <div className="slider-container">
-            <img src={MasterclassData[currentIndex].src} alt={`Slide ${currentIndex}`} />
+           
             <div className="image-info">
              <h2>{MasterclassData[currentIndex].title}</h2>
              <p>{MasterclassData[currentIndex].name} , {MasterclassData[currentIndex].fonction}  </p>
            </div>
             
+            <div className="thumbnails-container">
+            {MasterclassThumbs.map((thumb,index) => (
+            <div id="thumbnails"  
+              key={thumb.id}
+              className={index=== currentIndex ? 'actif' : ''}
+              onClick={() => setCurrentIndex(index)}
+            >
+              <div className="thumbnail-titre">{thumb.title}</div>
+              {/* <div className="thumbnail-speacker">
+                <span className="thumbnail-image">
+                    <img src={thumb.src}  alt={`Thumbnail ${index}`}/>
+                </span>
+                
+                <span>{thumb.name}</span>
+              </div> */}
+              <div className="thumbnail-date"><FaCalendar /> {thumb.date}</div>
+              <div className="thumbnail-heure"><FaClock /> {thumb.heure}</div>
+                
+            </div>
+          
+            
+              ))}
+            </div>     
          </div>
          {/* <button onClick={prevSlide}>Précédent</button>
        <button onClick={nextSlide}>Suivant</button> */}
-       
-       <div className="thumbnails-container">
-       {MasterclassThumbs.map((thumb,index) => (
-        <div id="thumbnails"  
-          key={thumb.id}
-          className={index=== currentIndex ? 'actif' : ''}
-          onClick={() => setCurrentIndex(index)}
-        >
-          <div className="thumbnail-titre">{thumb.title}</div>
-          <div className="thumbnail-speacker">
-            <span className="thumbnail-image">
-               <img src={thumb.src}  alt={`Thumbnail ${index}`}/>
-            </span>
-            
-            <span>{thumb.name}</span>
-          </div>
-          <div className="thumbnail-date"><FaCalendar /> {thumb.date}</div>
-          <div className="thumbnail-heure"><FaClock /> {thumb.heure}</div>
-           
-        </div>
-     
-        
-          ))}
-       </div>
+          <img className='image' src={MasterclassData[currentIndex].src} alt={`Slide ${currentIndex}`} />  
 
     </div>
 

@@ -182,7 +182,7 @@ const Darkhome = () =>{
                     </div>
              </div>
                 {/* section masterclass */}
-              <Masterclass/>
+              {/* <Masterclass/> */}
 
               
                {/* ****section de presentation des organisateurs */}

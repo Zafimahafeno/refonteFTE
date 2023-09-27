@@ -1,210 +1,100 @@
-#app { 
-    height: 100% }
-  html,
-  body {
-    position: relative;
-    height: 100%;
-  }
+.agenda-container{
+  margin: 0;
+  padding: 0;
+  top: 0;
+  background-color: rgb(19, 19, 19);
+}
+.agenda-header{
+  height: 50vh;
+  background: url('../../img/agenda-bg.png');
+  background-size: cover;
+
+}
+.agenda-titre{
+  margin: 0;
+  padding: 15% 0 0 2%;
+  font-size: 46px;
+}
+
+.jour-container{
+  margin-top: 1%;
+  display: flex;
+  flex-direction: row;
+}
+.date{
+  padding: 0.5% 3%;
+  border: 1px solid #fff;
+  margin: 0 1%;
+  border-radius: 25px;
+  cursor: pointer;
+}
+.date:hover{
+  background: #ffffffc2;
+  color: black;
+  border: 0;
+}
+.activeToggle{
+  background: #ffffff;
+  color: black;
+  border: 0;
+}
+
+.show-detail-container{
+  display: block;
+  margin-top: 2%;
+  /* border-top: 2px groove rgba(255, 255, 255, 0.333); */
   
-  body {
-    background-image:url('./18777701_6037261.jpg');
-    background-size: cover;
-    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    color: #000;
-    margin: 0;
-    padding: 0;
-  }
+}
+.hide-detail-container
+{
+  display: none;
+}
+.detail-boite{
+  display: flex;
+  flex-direction: column;
+  /* border-bottom: 2px solid rgba(255, 255, 255, 0.333); */
+  padding: 1% 0 1% 3%;
+  position: relative;
+}
+.heure{
+  /* width: 8%; */
+  font-size: 18px;
+  display: flex;
+  align-items: center;
   
-  .swiper {
-    margin-top: 6%;
-    border-radius: 20px;
-    padding-top: 30px;
-    padding-bottom: 90px;
-    display:flex;
-    width: 90%;
-    height: 90%;
-    background: #181711;
-  }
+}
+.heure::after{
+  content: "";
+  /* position: absolute; */
+  width: 0%;
+  margin-left:1%;
+  display: block;
+  width: 80%;
+  height: 3px;
+  background: #2f2f2f;
   
-  .swiper-slide {
-    font-size: 18px;
-    color: #fff;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 40px 60px;
-  }
+}
+.activite{
+  font-size: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  width: 70%;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  background: rgba(255, 255, 255, 0.2); /* Couleur de fond avec une opacité */
+    backdrop-filter: blur(10px); /* Flou de fond */
+  border: 1px solid #2f2f2f;
+  border-radius: 10px;
+  padding: 2% 0 2% 3%;
+  margin-left: 8%;
+  display: flex;
+  flex-direction: row;
+
+}
+.activite p{
   
-  .parallax-bg {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 130%;
-    height: 100%;
-    -webkit-background-size: cover;
-    background-size: cover;
-    background-position: center;
-  }
-  
-  .swiper-slide .title {
-    font-size: 41px;
-    font-weight: 300;
-  }
-  
-  .swiper-slide .subtitle {
-    font-size: 21px;
-  }
-  
-  .swiper-slide .text {
-    font-size: 14px;
-    max-width: 400px;
-    line-height: 1.3;
-  }
-  .programme-container{
-    margin-left:5%;
-    
-    padding-top:2%;
-    padding-left: 2%;
-    padding-bottom:14%;
-    justify-content: center;
-    text-align: center;
-    margin-top: 20px;
-    width: 89%; /* Largeur du conteneur */
-    height: 50%; /* Hauteur du conteneur */
-    background: rgba(255, 255, 255, 0.15); /* Fond transparent avec effet glassmorphism */
-    border-radius: 20px; /* Coins arrondis */
-    backdrop-filter: blur(10px); /* Effet de flou pour le verre */
-    color: #fff; /* Couleur du texte */
-    text-align: center; /* Alignement du texte au centre */
-    font-size: 18px;/* Taille de la police */
-  }
-  .programme-container .heure {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #ff6600; /* Couleur de texte personnalisée */
-  }
-  .programme-container .inscription-btn,
-  .programme-container .participation-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    background-color: #00aaff; /* Couleur du bouton */
-    color: #fff; /* Couleur du texte du bouton */
-    text-decoration: none;
-    margin-right: 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
-  .event{
-    margin-left: 10%;
-  }
-  
-  .programme-container .inscription-btn:hover,
-  .programme-container .participation-btn:hover {
-    background-color: #ff6600; /* Couleur du bouton au survol */
-  }
-  
-  /* Styles pour la citation */
-  .programme-container .citation {
-    font-style: italic;
-    margin-top: 20px;
-    color: #888; /* Couleur du texte de la citation */
-  }
-  .jour-container{
-    display: flex;
-    justify-content: start;
-    margin-right: 20%;
-  }
-  
-  .left-image {
-    width: 70px; /* Largeur souhaitée pour l'image */
-    height: 68px; /* Hauteur souhaitée pour l'image */
-    margin-left: 590%;
-    
-  }
-  .calendrier-image{
-    display: flex;
-    flex-direction: row;
-    
-    
-  }
-  .subtitle{
-    margin-left: 10%;
-  }
-  .evenement-container{
-    display: flex;
-    flex-direction: row;
-  }
-  /* Styles de base pour les boutons */
-  .bouton-participer{
-    display: inline-flex;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    border-radius: 30px;
-    font-size: 14px;
-    padding: 10px 20px;
-    background-color: #ff6600; /* Couleur de fond de base */
-    color: #fff; /* Couleur du texte */
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-    margin-left: 190%; /* Espace entre les boutons */
-  }
-  .bouton-reserver {
-    display: inline-flex;
-    width: 104%;
-    align-items: center;
-    justify-content: center;
-    border-radius: 30px;
-    font-size: 14px;
-    padding: 10px 10px;
-    background-color: #ff6600; /* Couleur de fond de base */
-    color: #fff; /* Couleur du texte */
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-    margin-left: 90%; /* Espace entre les boutons */
-  }
-  
-  /* Style au survol */
-  .bouton-participer:hover,
-  .bouton-reserver:hover {
-    background-color: #ff4500; /* Changement de couleur de fond au survol */
-  }
-  
-  /* Animation cool pour le bouton "Participer" */
-  .bouton-participer {
-    animation: coolAnimationParticiper 1s infinite alternate;
-  }
-  
-  @keyframes coolAnimationParticiper {
-    0% {
-      transform: scale(1);
-    }
-    100% {
-      transform: scale(1.05); /* Légère agrandissement au cours de l'animation */
-    }
-  }
-  
-  /* Animation cool pour le bouton "Réserver une place" */
-  .bouton-reserver {
-    animation: coolAnimationReserver 1s infinite alternate;
-  }
-  
-  @keyframes coolAnimationReserver {
-    0% {
-      transform: translateY(0);
-    }
-    100% {
-      transform: translateY(-5px); /* Légère translation verticale au cours de l'animation */
-    }
-  }
-  /* .heure{ */
-    
-  /* } */
-  .evenement-contain{
-    text-align: center;
-  }
+}
+.activite img{
+  width: 8%;
+  margin-left: 3%;
+  border-radius: 50px;
+}
