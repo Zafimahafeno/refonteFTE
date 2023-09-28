@@ -44,23 +44,28 @@ body{
  .grand-titre{
  
    text-align: center;
- 
+  
   
  }
- .grand-titre h4{
+ .grand-titre p{
    color: #ffffff;
-   margin-right: 21%;
-   font-size: 16px;
-   font-weight: 800;
+   margin-right: 22%;
+   font-size: 14px;
+   font-weight: 500;
+   margin-bottom: 0;
+   margin-top: 10%;
    
  }
- 
+ .grand-titre h1{
+  margin: 0;
+ }
  .grand-titre h1 span {
    background: linear-gradient(to right, #f8931b, #8400ff, #120079, #4ef3ff);
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
    font-size: 46px;
    font-weight: 600;
+  
    
  }
  .grand-titre h2 {
@@ -147,11 +152,11 @@ body{
       margin-top: 60%;
          margin-bottom: 0;
     }
-    .grand-titre h2{
-        font-size: 16px;
+    .grand-titre h4{
+        font-size: 12px;
     }
     .grand-titre h1 span{
-      font-size: 20px;
+      font-size: 24px;
     }
     .about-btn {
  
@@ -343,11 +348,14 @@ body{
   padding-bottom: 3%;
   border-radius: 25px;
   overflow: hidden;
-  border: 1px solid rgb(45, 2, 70);
+  border: 1px solid rgba(0, 0, 0, 0.059);
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .13), 0 1px 1px 0 rgba(0, 0, 0, .11);
- 
+  background: rgba(255, 255, 255, 0.059); /* Couleur de fond avec une opacité */
+  backdrop-filter: blur(20px); /* Flou de fond */
 }
-
+.pro-boite:hover{
+  box-shadow: 0px 16px 48px 0px rgba(186, 4, 232, 0.358);
+}
 .pro-image{
   width: 100%;
   height: 60%;
@@ -363,7 +371,7 @@ body{
 }
 
 .pro-info{
-  margin: 0 2%;
+  margin: 2% 2%;
   height: 100%;
   
  
@@ -374,13 +382,23 @@ body{
 .pro-info a{
   color: white;
   text-decoration: none;
-  border-bottom: 3px solid #f8931b;
+  /* border-bottom: 3px solid #f8931b; */
+  border: 1px solid white;
+  padding: 2% 3% ;
+  border-radius: 25px;
+  margin-top: 5%;
+  font-size: 14px;
+}
+.pro-info a:hover{
+  background-color: #fff;
+  color: #000000;
+  border: 1px solid rgba(0, 0, 0, 0.059);
 }
 
 /* *******responsivité************* */
 @media screen and (max-width : 550px ){
   .pro-container{
-    flex-wrap: wrap;
+    flex-direction: column;
   }
   .pro-about-titre p{
     font-size: 10px;
@@ -391,24 +409,25 @@ body{
  
   .pro-boite{
     border-radius: 13px;
-    margin-top: 5%;
-    width: 40%;
+    margin: 5% ;
+    width: 60%;
+   
   }
   
   .pro-info{
     margin: 3% 0 6% 5% ;
   }
   .pro-titre{
-    font-size: 9px;
+    font-size: 12px;
     margin: 0;
   }
   
   .pro-descri{
-    font-size: 6px;
+    font-size: 8px;
   }
   
   .pro-info a{
-    font-size: 6px;
-    border-bottom: 1px solid #f8931b;
+    font-size: 8px;
+    
   }
 }

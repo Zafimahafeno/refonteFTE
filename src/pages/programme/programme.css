@@ -80,8 +80,8 @@
   text-transform: uppercase;
   width: 70%;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  background: rgba(255, 255, 255, 0.2); /* Couleur de fond avec une opacité */
-    backdrop-filter: blur(10px); /* Flou de fond */
+  background: rgba(255, 255, 255, 0.059); /* Couleur de fond avec une opacité */
+    backdrop-filter: blur(20px); /* Flou de fond */
   border: 1px solid #2f2f2f;
   border-radius: 10px;
   padding: 2% 0 2% 3%;
@@ -89,12 +89,49 @@
   display: flex;
   flex-direction: row;
 
-}
-.activite p{
   
+
+}
+.activite-p span{
+  font-size: 16px;
+  text-transform: lowercase;
+  font-weight: 100;
 }
 .activite img{
   width: 8%;
   margin-left: 3%;
   border-radius: 50px;
+}
+@media screen and (max-width : 550px ){
+  .agenda-header{
+    height: 20vh;
+  }
+  .agenda-titre{
+    font-size: 16px;
+    padding: 25% 0 0 2%;
+  }
+  .jour-container{
+    z-index: 1;
+  }
+  .date{
+    font-size: 14px;
+    text-align: center;
+    margin: 2% 1% ;
+  }
+  .activite{
+    margin: 1% 0 1% 15%;
+    font-size: 12px;
+  }
+  .heure{
+    font-size: 14px;
+  }
+  .activite-p span{
+    font-size: 10px;
+    
+  }
+  .activite img{
+    width: 20%;
+    margin-left: 20%;
+    
+  }
 }

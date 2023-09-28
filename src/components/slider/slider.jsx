@@ -124,23 +124,19 @@ const sliderDataThumbs = [
           ))}
              </div>
              <div className="slider-about">
-
-              <div className="slider-descri">
-                
-              </div>
-             <AnimatePresence initial={false} custom={currentIndex}>
-            <motion.div
-              className="slide-descri"
-              key={sliderData[currentIndex].id}
-              initial={{ opacity: 0, x: 100 }}
-              animate={{ opacity: 1, x: 0 }}
+             {sliderData.map((slide, index) => (
+                <div
+                  key={index}
+                  className={`slider-descri ${index === currentIndex ? "descriActive" : ""}`}
+                >
+                  <h1 className="slider-title">{slide.title}</h1>
+                  <p className="slider-text">{slide.text}</p>
+                </div>
+              ))}
+               
+            
               
-              transition={{ duration: 1 }}
-            >
-              <h1 className="slider-title">{sliderData[currentIndex].title}</h1>
-              <p className="slider-text">{sliderData[currentIndex].text}</p>
-            </motion.div>
-          </AnimatePresence>
+            
           
 
              
@@ -158,9 +154,7 @@ const sliderDataThumbs = [
                 </div>
                 ))}
               </div>
-             </div>
-
-             
+             </div>  
         </div>
          {/* <button className= 'slider-button' onClick={prevSlide}>
          <FaAngleLeft />

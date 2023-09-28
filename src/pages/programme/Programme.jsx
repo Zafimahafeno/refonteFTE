@@ -15,7 +15,7 @@ function Programme() {
   return (
     <div> 
       <Sidebar/>
-      <NavBar/>
+      {/* <NavBar/> */}
       <div className="agenda-container">
         <div className="agenda-header">
           <h1 className="agenda-titre">
@@ -56,10 +56,13 @@ function Programme() {
           <div className="detail-boite">
               <div className="heure"> 09:00</div>
               <div className="activite">
+                <div className="activite-p">
+                <p>MasterClass sur ... </p>
+                <span>avec ....</span>
+                </div>
                 
-                <p>MasterClass sur ...</p>
                 <img src="" alt="" />
-                <span>avec ....</span> 
+                 
               </div>
               <div className="remarque"></div>
           </div>
@@ -76,9 +79,12 @@ function Programme() {
               <div className="heure">14:30</div>
               <div className="activite">
                  
-                 <p>MasterClass sur ...</p>
+              <div className="activite-p">
+                <p>MasterClass sur ... </p>
+                <span>avec ....</span>
+                </div>
                  <img src="" alt="" />
-                 <span>avec ....</span> 
+                 
               </div>
               <div className="remarque"></div>
           </div>
@@ -89,17 +95,21 @@ function Programme() {
               <div className="heure"> 09:00</div>
               <div className="activite">
                 
-                <p>MasterClass sur ...</p>
+              <div className="activite-p">
+                <p>MasterClass sur ... </p>
+                <span>avec ....</span>
+                </div>
                 <img src="" alt="" />
-                <span>avec ....</span> 
+                 
               </div>
               <div className="remarque"></div>
           </div>
           <div className="detail-boite">
               <div className="heure">14:00</div>
               <div className="activite">
-                <img src="" alt="" />
+               
                 <p>Concours Jeu vidéo</p>
+                <img src="" alt="" />
               </div>
               <div className="remarque"></div>
           </div> 

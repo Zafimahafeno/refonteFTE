@@ -35,14 +35,7 @@ const Sidebar = () => {
     setShowDropdown(!showDropdown);
   };
 
-  const handleDropdownMouseEnter = () => {
-    setDropdownHover(true);
-  };
-
-  const handleDropdownMouseLeave = () => {
-    setDropdownHover(false);
-  };
-
+  
   
   return (
     <div className="fte-navbar">
@@ -80,16 +73,14 @@ const Sidebar = () => {
         
           <div 
           className={`navLink ${showDropdown ? 'active' : ''}`} id="dropdown"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
+          
           onClick={handleClick}
           >
             Je participe
           </div>
           { showDropdown &&(
             <ul className="dropdown-content"
-            onMouseEnter={handleDropdownMouseEnter}
-            onMouseLeave={handleDropdownMouseLeave}
+          
             >
             <li>
                 <NavLink

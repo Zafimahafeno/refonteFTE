@@ -73,7 +73,7 @@ const Darkhome = () =>{
                  {/* contenu sur le landing page  */}
                  <div className="landing-content">
                      <div className="grand-titre">
-                         <h4>BIENVENUE À LA </h4> 
+                         <p>BIENVENUE À LA </p> 
                          <h1> <span>FIANARA <span>TECH</span> EXPO</span></h1>
                         
                          <button className="about-btn" onClick={scrollToSection}>
@@ -156,15 +156,19 @@ const Darkhome = () =>{
                                 </div>
                                 <div className="pro-info">
                                     <h3 className="pro-titre">
-                                         Jeu et concours 
+                                         Divers concours 
                                     </h3>
                                     <p className="pro-descri">
-                                        Participer au divers jeu et concours
+                                        
+                                        Concours Jeux vidéos. <br />
+                                        Hackathon <br />
+                                        Concours du meilleur projet numérique.
+
                                     </p>
                                     <a href="/">Decouvrir le programme</a>
                                 </div>
                             </div>
-                            <div className="pro-boite bas">
+                            {/* <div className="pro-boite bas">
                               <div className="pro-image">
                                     <img src={imagepro4} alt=""/>
                                 </div>
@@ -177,7 +181,7 @@ const Darkhome = () =>{
                                     </p>
                                     <a href="/">Decouvrir le programme</a>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
              </div>

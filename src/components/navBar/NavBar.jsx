@@ -54,13 +54,7 @@ const NavBar = () => {
       setShowDropdown(!showDropdown);
     };
   
-    const handleDropdownMouseEnter = () => {
-      setDropdownHover(true);
-    };
-  
-    const handleDropdownMouseLeave = () => {
-      setDropdownHover(false);
-    };
+    
   
     return (
         <animated.nav style={navBarAnimation} className={isScrolled ? "navBar scrolled" : "navBar notScrolled"}>
@@ -97,16 +91,14 @@ const NavBar = () => {
         
           <div 
           className={`navLink ${showDropdown ? 'active' : ''}`} id="dropdown"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
+         
           onClick={handleClick}
           >
             Je participe
           </div>
           { showDropdown &&(
             <ul className="dropdown-content"
-            onMouseEnter={handleDropdownMouseEnter}
-            onMouseLeave={handleDropdownMouseLeave}
+           
             >
             <li>
                 <NavLink
