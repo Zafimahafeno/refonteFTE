@@ -20,16 +20,7 @@ const Sidebar = () => {
   };
 
   const [showDropdown, setShowDropdown] = useState(false);
-  const [dropdownHover, setDropdownHover] = useState(false);
-  const handleMouseEnter = () => {
-    setShowDropdown(true);
-  };
 
-  const handleMouseLeave = () => {
-    if (!dropdownHover) {
-      setShowDropdown(false);
-    }
-  };
 
   const handleClick = () => {
     setShowDropdown(!showDropdown);

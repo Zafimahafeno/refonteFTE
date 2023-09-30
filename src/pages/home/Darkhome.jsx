@@ -2,21 +2,25 @@ import React,{useEffect,useState} from "react";
 
 import './Darkhome.css';
 import { FaLongArrowAltUp} from "react-icons/fa";
+ 
 import background from "../../img/landing-bg.mp4";
 import Sidebar from '../../components/Sidebar/sidebar';
 import NavBar from '../../components/navBar/NavBar';
 import Masterclass from "../../components/masterclass/masterclass";
 import fteAbout from "../../img/fteA.png";
-import Slider from '../../components/slider/slider'
+import Footer from "../../components/footer/Footer";
+import { JeuData } from "../../components/jeuData/JeuData";
+
+import Slidercomponent from '../../components/slider/slider'
 
 
 // import des images
 import imagepro1 from '../../img/gallery/3.jpg'
 import imagepro2 from '../../img/gallery/2.jpg'
 import imagepro3 from '../../img/gallery/9.jpg'
-import imagepro4 from '../../img/gallery/4.jpg'
-import imagepro5 from '../../img/gallery/5.jpg'
 
+import imageJeu1 from '../../img/Mannette@4x.png'
+import imageJeu2 from '../../img/Ordinateur@4x.png'
 
 
 
@@ -52,6 +56,26 @@ const Darkhome = () =>{
       sectionToScrollTo.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  // slide jeu
+  const [currentIndex, setCurrentIndex] = useState(1); // Initialisé à 1
+  const delay = 5000; 
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex === JeuData.length - 1 ? 0 : prevIndex + 1));
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? JeuData.length - 1 : prevIndex - 1));
+  };
+  useEffect(() => {
+    // Démarrez le défilement automatique lorsque le composant est monté
+    const intervalId = setInterval(nextSlide, delay);
+
+    // Arrêtez le défilement automatique lorsque le composant est démonté
+    return () => clearInterval(intervalId);
+  }, []);
+
+
     return(
         <div className="big-container">
             <NavBar/> 
@@ -112,7 +136,7 @@ const Darkhome = () =>{
               
                 {/* section programme */}
 
-                <div className="fte-pro">
+              <div className="fte-pro">
                     <div className="pro-titre-container">
                         {/* <div className="tiret"></div> */}
                             <div className="pro-about-titre">
@@ -185,12 +209,52 @@ const Darkhome = () =>{
                         </div>
                     </div>
              </div>
+              
+
+              {/* Jeu et Hackathon  */}
+              <div className="jeu-container">
+                <div className='jeu-boite'>
+                    <div className="jeu-image">
+                      {JeuData.map((slide, index) => (
+                            <img
+                              key={slide.key}
+                              src={slide.image}
+                              alt={`Slide ${index}`}
+                              className={`fade-in-right ${index === currentIndex ? 'photoActive' : ''}`}
+                            />
+                        ))}
+                    </div>
+                    
+                 
+                  
+                      {JeuData.map((slide, index) => (
+                          <div
+                            key={index}
+                            className={`jeu-descri ${index === currentIndex ? "descriActive" : ""}`}
+                          >
+                            <h3>{slide.titreJeu}</h3>
+                            <p>{slide.descriJeu}</p>
+                            <a href="/" className="btn-16">
+                              Voir plus
+                            </a>
+                          </div>
+                          
+                        ))}
+
+                </div>
+                    
+                    
+             
+              </div>
+
+
+
                 {/* section masterclass */}
               {/* <Masterclass/> */}
 
               
                {/* ****section de presentation des organisateurs */}
-               <Slider/>
+               <Slidercomponent/>
 
           
 
@@ -200,10 +264,13 @@ const Darkhome = () =>{
                         <button onClick={toTop} className="top"><FaLongArrowAltUp/></button>
                     </div>
                  )}
-              <div className="footer">
+
+                   
+
+                {/* footer */}
+                <Footer/> 
                  
-              </div>
-        </div>
+      </div>
         
 
     

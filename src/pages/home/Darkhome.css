@@ -320,20 +320,23 @@ body{
 }
 .pro-about-titre h2{
    font-size: 32px;
+   margin-bottom: 1%;
 }
 .pro-about-titre h2::after {
   content: "";
   position: absolute;
-  width: 0%;
+  margin-top: 1%;
   height: 3px;
   display: block;
-  transition: all 0.3s ease;
-  /* bottom: 25%; */
+
+  
   width: 5%;
   height: 3px;
   background:  #4ef3ff;
 }
-
+.pro-about-titre p{
+  margin-top: 2%;
+}
 .pro-container{
   margin: 5% 0 10% 10%;
    width: 80%;
@@ -431,3 +434,79 @@ body{
     
   }
 }
+
+
+/* ***********Jeu et hackathon************** */
+.jeu-container{
+  height: 80vh;
+  background: url('../../img/back2.png');
+  background-size: cover;
+}
+.jeu-boite{
+  display: flex;
+  flex-direction: row;
+  margin: 2% 0;
+
+}
+.jeu-image{
+  width: 70%;
+}
+.jeu-image img{
+  width: 55%;
+  position: absolute;
+}
+
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(-5%); /* Déplacez l'image vers le bas de 50px (ou la hauteur souhaitée) */
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.fade-in-right.photoActive {
+  opacity: 1;
+  transform: translateX(0); /* Retour à la position d'origine */
+}
+.deux{
+ margin: 10% 0 0 5%;
+ text-align: end;
+}
+.jeu-descri {
+  opacity: 0;
+  transform: translateX(20%); 
+  transition: opacity 0.5s ease-in-out, transform 1s ease-in-out;
+  position: absolute;
+  width: 30%;
+  margin: 10% 5% 0 60%;
+}
+
+.jeu-descri.descriActive {
+  opacity: 1;
+  transform: translateX(0); 
+}
+
+.jeu-descri h3{
+  font-size: 28px;
+}
+.jeu-descri p{
+  font-weight: 200;
+}
+/* Style de base pour le lien "Voir plus" */
+.btn-16 {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color:   #f8931b;
+  color: #fff; /* La couleur du texte devient noire au survol */
+  text-decoration: none;
+  overflow: hidden;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+
+.btn-16:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+  
+}
+
+

@@ -11,7 +11,7 @@ import logo3 from './org-photo/logo3.png';
 import logo4 from './org-photo/logo4.jpg';
 import logo5 from './org-photo/logo5.png';
 import logo6 from './org-photo/logo6.png';
-const Slider = () => {
+const Slidercomponent = () => {
   const sliderData = [
 
     {
@@ -106,7 +106,7 @@ const sliderDataThumbs = [
   return (
     <div className="slider-section">
         
-        <div className="about-titre">
+        <div className="pro-about-titre org">
             <h2>Organisateurs </h2>
         </div>
         <div className="slider-content">
@@ -167,4 +167,4 @@ const sliderDataThumbs = [
   );
 };
 
-export default Slider;
+export default Slidercomponent;
