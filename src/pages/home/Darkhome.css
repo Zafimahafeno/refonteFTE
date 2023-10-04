@@ -6,7 +6,7 @@ body{
   background-color: #000000 ;
   background-image: linear-gradient(147deg,#000000 10%,#440f58  74%);
   color: #fff;
-  backdrop-filter: blur(10px);
+ 
 }
 .first-container{
   background-color: #070707;
@@ -494,11 +494,12 @@ body{
 .btn-16 {
   position: relative;
   display: inline-block;
-  padding: 10px 20px;
+  padding: 1.5% 3%;
   background-color:   #f8931b;
   color: #fff; /* La couleur du texte devient noire au survol */
   text-decoration: none;
   overflow: hidden;
+  border-radius: 25px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
@@ -506,6 +507,40 @@ body{
 .btn-16:hover {
   transform: scale(1.1);
   transition: 0.3s;
+  
+}
+
+@media screen and (max-width : 550px ){
+  .jeu-container{
+    height: 30vh;
+    
+  }
+  .jeu-descri h3{
+    font-size: 12px;
+  }
+  .jeu-descri p{
+    font-size: 8px;
+  }
+  .jeu-descri {
+    
+    width: 50%;
+    margin: 8% 5% 0 50%;
+  }
+  .jeu-image{
+    width: 50%;
+    margin-top: 8%;
+  }
+  .jeu-image img{
+    width: 45%;
+    
+  }
+  .btn-16 {
+    
+    font-size: 8px;
+    
+    
+  }
+  
   
 }
 

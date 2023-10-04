@@ -12,12 +12,17 @@ const Footer = () =>{
 
   const [activeLink, setActiveLink] = useState("");
 
-  const [showDropdown, setShowDropdown] = useState(false);
+  const [showDropdown1, setShowDropdown1] = useState(false);
+  const [showDropdown2, setShowDropdown2] = useState(false);
 
-
-  const handleClick = () => {
-    setShowDropdown(!showDropdown);
+  const handleClick1 = () => {
+    setShowDropdown1(!showDropdown1);
   };
+
+  const handleClick2 = () => {
+    setShowDropdown2(!showDropdown2);
+  };
+
     return(
         <div className="footer">
             <div className="footer-logo">
@@ -42,23 +47,56 @@ const Footer = () =>{
                 </NavLink>
             </li>
             <li>
-                <NavLink
-                className={`navLinkFooter ${location.pathname === "/Jeu" ? "activeFooter" : ""}`}
+        
+        <div 
+        className={`navLink ${showDropdown1 ? 'active' : ''}`} id="dropdown"
+        
+        onClick={handleClick1}
+        >
+          Concours
+        </div>
+        { showDropdown1 &&(
+          <ul className="dropdown-content"
+        
+          >
+          <li>
+              <NavLink
                 to="/Jeu"
-                >
-                Concours
-                </NavLink>
+                onClick={() => {
+                  setActiveLink("Jeux");
+                  setShowDropdown1(true);
+                }}
+                
+                className="dropdown-navlink"
+              >
+                Jeux 
+              </NavLink>
             </li>
+            <li>
+              <NavLink
+                to="/Hackathon"
+                onClick={() => {
+                  setActiveLink("Hackathon");
+                  setShowDropdown1(false);
+                }}
+                className="dropdown-navlink"
+              >
+                Hackathon
+              </NavLink>
+            </li>
+          </ul>
+        )}
+      </li>
                 <li>
                 
                     <div 
-                    className={`navLinkFooter ${showDropdown ? 'activeFooter' : ''}`} id="dropdown"
+                    className={`navLinkFooter ${showDropdown2 ? 'activeFooter' : ''}`} id="dropdown"
                     
-                    onClick={handleClick}
+                    onClick={handleClick2}
                     >
                     Je participe
                     </div>
-                    { showDropdown &&(
+                    { showDropdown2 &&(
                     <ul className="dropdown-content"
                     
                     >
@@ -67,7 +105,7 @@ const Footer = () =>{
                             to="/Reservation"
                             onClick={() => {
                             setActiveLink("Reservation");
-                            setShowDropdown(true);
+                            setShowDropdown2(true);
                             }}
                             
                             className="dropdown-navlink"
@@ -80,7 +118,7 @@ const Footer = () =>{
                             to="/Partenariat"
                             onClick={() => {
                             setActiveLink("Partenariat");
-                            setShowDropdown(false);
+                            setShowDropdown2(false);
                             }}
                             className="dropdown-navlink"
                         >

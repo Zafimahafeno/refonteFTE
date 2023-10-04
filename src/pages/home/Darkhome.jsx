@@ -97,7 +97,7 @@ const Darkhome = () =>{
                  {/* contenu sur le landing page  */}
                  <div className="landing-content">
                      <div className="grand-titre">
-                         <p>BIENVENUE À LA </p> 
+                         <p>BIENVENUE AU </p> 
                          <h1> <span>FIANARA <span>TECH</span> EXPO</span></h1>
                         
                          <button className="about-btn" onClick={scrollToSection}>
@@ -121,13 +121,16 @@ const Darkhome = () =>{
               <div className="about-content" id='about'>
                   {/* <div className="tiret"></div> */}
                   <div className="about-titre">
-                    <h2> Parlons un peu de  </h2>
+                    <h2>  Coup d’ oeil sur </h2>
                     <div className="titre-colore"><img src={fteAbout} alt="" /></div>
                   </div>
     
                   <div className="about-para">
                        <p>
-                         Lorem ipsum dolor sit amet consectetur adipisicing elit. A quas maxime illo necessitatibus totam sunt aut eaque ipsam, laborum dolores voluptatum inventore cupiditate labore veniam ipsum at ut placeat vero?
+                       FTE ,le salon de l’année , met en avant les talents, la créativité et
+                        l'innovation technologique dans la ville de Fianarantsoa  afin de  promouvoir
+                         le réseautage, les présentations et les opportunités de partenariat. Nous mettons tout  ceci 
+                       en œuvre pour que Fianarantsoa soit un véritable hub technologique en plein essor.
                        </p>
 
                    </div>
@@ -136,80 +139,6 @@ const Darkhome = () =>{
               
                 {/* section programme */}
 
-              <div className="fte-pro">
-                    <div className="pro-titre-container">
-                        {/* <div className="tiret"></div> */}
-                            <div className="pro-about-titre">
-                                <h2>Au programme </h2>
-                                <p>Retrouvez les divers activités durant FIANARA TECH EXPO </p>
-                            </div>
-                        </div>
-                        <div className="pro-container">
-                            <div className="pro-boite">
-                                <div className="pro-image">
-                                    <img src={imagepro1} alt=""/>
-                                </div>
-                                
-                                <div className="pro-info">
-                                    <h3 className="pro-titre">
-                                       Salon des entreprises
-                                    </h3>
-                                    <p className="pro-descri">
-                                        Divers stands des  differentes entreprises dans le pays. 
-                                    </p>
-                                    <a href="/">Decouvrir le programme</a>
-                                </div>
-                            </div>
-                            <div className="pro-boite bas">
-                              <div className="pro-image">
-                                    <img src={imagepro2} alt=""/>
-                                </div>
-                                <div className="pro-info">
-                                    <h3 className="pro-titre">
-                                       Masterclass
-                                    </h3>
-                                    <p className="pro-descri">
-                                        Différents Masterclass 
-                                    </p>
-                                    <a href="/">Decouvrir le programme</a>
-                                </div>
-                            </div>
-                            <div className="pro-boite">
-                              <div className="pro-image">
-                                    <img src={imagepro3} alt=""/>
-                                </div>
-                                <div className="pro-info">
-                                    <h3 className="pro-titre">
-                                         Divers concours 
-                                    </h3>
-                                    <p className="pro-descri">
-                                        
-                                        Concours Jeux vidéos. <br />
-                                        Hackathon <br />
-                                        Concours du meilleur projet numérique.
-
-                                    </p>
-                                    <a href="/">Decouvrir le programme</a>
-                                </div>
-                            </div>
-                            {/* <div className="pro-boite bas">
-                              <div className="pro-image">
-                                    <img src={imagepro4} alt=""/>
-                                </div>
-                                <div className="pro-info">
-                                    <h3 className="pro-titre">
-                                        Hackathon
-                                    </h3>
-                                    <p className="pro-descri">
-                                        
-                                    </p>
-                                    <a href="/">Decouvrir le programme</a>
-                                </div>
-                            </div> */}
-                        </div>
-                    </div>
-             </div>
-              
 
               {/* Jeu et Hackathon  */}
               <div className="jeu-container">
@@ -269,7 +198,7 @@ const Darkhome = () =>{
 
                 {/* footer */}
                 <Footer/> 
-                 
+          </div>
       </div>
         
 

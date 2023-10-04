@@ -19,11 +19,15 @@ const Sidebar = () => {
     }
   };
 
-  const [showDropdown, setShowDropdown] = useState(false);
+  const [showDropdown1, setShowDropdown1] = useState(false);
+  const [showDropdown2, setShowDropdown2] = useState(false);
 
+  const handleClick1 = () => {
+    setShowDropdown1(!showDropdown1);
+  };
 
-  const handleClick = () => {
-    setShowDropdown(!showDropdown);
+  const handleClick2 = () => {
+    setShowDropdown2(!showDropdown2);
   };
 
   
@@ -52,24 +56,57 @@ const Sidebar = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink
-            className={`navLink ${activeLink === "Concours" ? "navLink active" : "navLink"}`}
-            to="/Jeu"
-            onClick={() => setActiveLink("Concours")}
+        
+          <div 
+          className={`navLink ${showDropdown1 ? 'active' : ''}`} id="dropdown"
+          
+          onClick={handleClick1}
           >
             Concours
-          </NavLink>
+          </div>
+          { showDropdown1 &&(
+            <ul className="dropdown-content"
+          
+            >
+            <li>
+                <NavLink
+                  to="/Jeu"
+                  onClick={() => {
+                    setActiveLink("Jeux");
+                    setShowDropdown1(true);
+                  }}
+                  
+                  className="dropdown-navlink"
+                >
+                  Jeux 
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/Hackathon"
+                  onClick={() => {
+                    setActiveLink("Hackathon");
+                    setShowDropdown1(false);
+                  }}
+                  className="dropdown-navlink"
+                >
+                  Hackathon
+                </NavLink>
+              </li>
+            </ul>
+          )}
         </li>
+        
         <li>
         
           <div 
-          className={`navLink ${showDropdown ? 'active' : ''}`} id="dropdown"
+          className={`navLink ${showDropdown2 ? 'active' : ''}`} id="dropdown"
           
-          onClick={handleClick}
+          onClick={handleClick2}
           >
             Je participe
           </div>
-          { showDropdown &&(
+          { showDropdown2 &&(
             <ul className="dropdown-content"
           
             >
@@ -78,7 +115,7 @@ const Sidebar = () => {
                   to="/Reservation"
                   onClick={() => {
                     setActiveLink("Reservation");
-                    setShowDropdown(true);
+                    setShowDropdown2(true);
                   }}
                   
                   className="dropdown-navlink"
@@ -91,7 +128,7 @@ const Sidebar = () => {
                   to="/Partenariat"
                   onClick={() => {
                     setActiveLink("Partenariat");
-                    setShowDropdown(false);
+                    setShowDropdown2(false);
                   }}
                   className="dropdown-navlink"
                 >

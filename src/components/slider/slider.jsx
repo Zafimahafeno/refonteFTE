@@ -18,7 +18,7 @@ const Slidercomponent = () => {
         id: 1,
         image:image1,
         title:'ORIGAMI TECH',
-        text: 'lalalalalaaaaaaaaaaaaaaaaaaaaalalalalalallalalalaalalala alalalalaaaaaaaaaaaaaaaaaaaaalalalalalallalalalaalalala',
+        text: 'Une entreprise de communication digitale, basée à Fianarantsoa depuis 4 ans , ayant comme vision ambitieuse d’ être le catalyseur du succès en ligne des clients, en les aidant à atteindre leurs objectifs et à se démarquer dans un monde numérique en constante évolution.',
         
     },
     {
