@@ -2,21 +2,30 @@ import React,{useEffect,useState} from "react";
 
 import './Darkhome.css';
 import { FaLongArrowAltUp} from "react-icons/fa";
+ 
 import background from "../../img/landing-bg.mp4";
 import Sidebar from '../../components/Sidebar/sidebar';
 import NavBar from '../../components/navBar/NavBar';
 // import Masterclass from "../../components/masterclass/masterclass";
 import fteAbout from "../../img/fteA.png";
-import Slider from '../../components/slider/slider'
+import Footer from "../../components/footer/Footer";
+import { JeuData } from "../../components/jeuData/JeuData";
+
+import Slidercomponent from '../../components/slider/slider'
 
 
 // import des images
 import imagepro1 from '../../img/gallery/3.jpg'
 import imagepro2 from '../../img/gallery/2.jpg'
 import imagepro3 from '../../img/gallery/9.jpg'
+<<<<<<< HEAD
 import imagepro4 from '../../img/gallery/4.jpg'
 // import imagepro5 from '../../img/gallery/5.jpg'
+=======
+>>>>>>> e45f4ef13f9dc236df580be24f14abc728c6fba8
 
+import imageJeu1 from '../../img/Mannette@4x.png'
+import imageJeu2 from '../../img/Ordinateur@4x.png'
 
 
 
@@ -52,6 +61,26 @@ const Darkhome = () =>{
       sectionToScrollTo.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  // slide jeu
+  const [currentIndex, setCurrentIndex] = useState(1); // Initialisé à 1
+  const delay = 5000; 
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex === JeuData.length - 1 ? 0 : prevIndex + 1));
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? JeuData.length - 1 : prevIndex - 1));
+  };
+  useEffect(() => {
+    // Démarrez le défilement automatique lorsque le composant est monté
+    const intervalId = setInterval(nextSlide, delay);
+
+    // Arrêtez le défilement automatique lorsque le composant est démonté
+    return () => clearInterval(intervalId);
+  }, []);
+
+
     return(
         <div className="big-container">
             <NavBar/> 
@@ -73,7 +102,7 @@ const Darkhome = () =>{
                  {/* contenu sur le landing page  */}
                  <div className="landing-content">
                      <div className="grand-titre">
-                         <h4>BIENVENUE À LA </h4> 
+                         <p>BIENVENUE AU </p> 
                          <h1> <span>FIANARA <span>TECH</span> EXPO</span></h1>
                         
                          <button className="about-btn" onClick={scrollToSection}>
@@ -97,13 +126,16 @@ const Darkhome = () =>{
               <div className="about-content" id='about'>
                   {/* <div className="tiret"></div> */}
                   <div className="about-titre">
-                    <h2> Parlons un peu de  </h2>
+                    <h2>  Coup d’ oeil sur </h2>
                     <div className="titre-colore"><img src={fteAbout} alt="" /></div>
                   </div>
     
                   <div className="about-para">
                        <p>
-                         Lorem ipsum dolor sit amet consectetur adipisicing elit. A quas maxime illo necessitatibus totam sunt aut eaque ipsam, laborum dolores voluptatum inventore cupiditate labore veniam ipsum at ut placeat vero?
+                       FTE ,le salon de l’année , met en avant les talents, la créativité et
+                        l'innovation technologique dans la ville de Fianarantsoa  afin de  promouvoir
+                         le réseautage, les présentations et les opportunités de partenariat. Nous mettons tout  ceci 
+                       en œuvre pour que Fianarantsoa soit un véritable hub technologique en plein essor.
                        </p>
 
                    </div>
@@ -112,81 +144,51 @@ const Darkhome = () =>{
               
                 {/* section programme */}
 
-                <div className="fte-pro">
-                    <div className="pro-titre-container">
-                        {/* <div className="tiret"></div> */}
-                            <div className="pro-about-titre">
-                                <h2>Au programme </h2>
-                                <p>Retrouvez les divers activités durant FIANARA TECH EXPO </p>
-                            </div>
-                        </div>
-                        <div className="pro-container">
-                            <div className="pro-boite">
-                                <div className="pro-image">
-                                    <img src={imagepro1} alt=""/>
-                                </div>
-                                
-                                <div className="pro-info">
-                                    <h3 className="pro-titre">
-                                       Salon des entreprises
-                                    </h3>
-                                    <p className="pro-descri">
-                                        Divers stands des  differentes entreprises dans le pays. 
-                                    </p>
-                                    <a href="/">Decouvrir le programme</a>
-                                </div>
-                            </div>
-                            <div className="pro-boite bas">
-                              <div className="pro-image">
-                                    <img src={imagepro2} alt=""/>
-                                </div>
-                                <div className="pro-info">
-                                    <h3 className="pro-titre">
-                                       Masterclass
-                                    </h3>
-                                    <p className="pro-descri">
-                                        Différents Masterclass 
-                                    </p>
-                                    <a href="/">Decouvrir le programme</a>
-                                </div>
-                            </div>
-                            <div className="pro-boite">
-                              <div className="pro-image">
-                                    <img src={imagepro3} alt=""/>
-                                </div>
-                                <div className="pro-info">
-                                    <h3 className="pro-titre">
-                                         Jeu et concours 
-                                    </h3>
-                                    <p className="pro-descri">
-                                        Participer au divers jeu et concours
-                                    </p>
-                                    <a href="/">Decouvrir le programme</a>
-                                </div>
-                            </div>
-                            <div className="pro-boite bas">
-                              <div className="pro-image">
-                                    <img src={imagepro4} alt=""/>
-                                </div>
-                                <div className="pro-info">
-                                    <h3 className="pro-titre">
-                                        Hackathon
-                                    </h3>
-                                    <p className="pro-descri">
-                                        
-                                    </p>
-                                    <a href="/">Decouvrir le programme</a>
-                                </div>
-                            </div>
-                        </div>
+
+              {/* Jeu et Hackathon  */}
+              <div className="jeu-container">
+                <div className='jeu-boite'>
+                    <div className="jeu-image">
+                      {JeuData.map((slide, index) => (
+                            <img
+                              key={slide.key}
+                              src={slide.image}
+                              alt={`Slide ${index}`}
+                              className={`fade-in-right ${index === currentIndex ? 'photoActive' : ''}`}
+                            />
+                        ))}
                     </div>
-             </div>
+                    
+                 
+                  
+                      {JeuData.map((slide, index) => (
+                          <div
+                            key={index}
+                            className={`jeu-descri ${index === currentIndex ? "descriActive" : ""}`}
+                          >
+                            <h3>{slide.titreJeu}</h3>
+                            <p>{slide.descriJeu}</p>
+                            <a href="/" className="btn-16">
+                              Voir plus
+                            </a>
+                          </div>
+                          
+                        ))}
+
+                </div>
+                    
+                    
+             
+              </div>
+
+
+
                 {/* section masterclass */}
               {/* <Masterclass/> */}
 
               
                {/* ****section de presentation des organisateurs */}
-               <Slider/>
+               <Slidercomponent/>
 
           
 
@@ -196,10 +198,13 @@ const Darkhome = () =>{
                         <button onClick={toTop} className="top"><FaLongArrowAltUp/></button>
                     </div>
                  )}
-              <div className="footer">
-                 
-              </div>
-        </div>
+
+                   
+
+                {/* footer */}
+                <Footer/> 
+          </div>
+      </div>
         
 
     
