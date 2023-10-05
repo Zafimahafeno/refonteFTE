@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import Sidebar from '../../components/Sidebar/sidebar';
 import NavBar from '../../components/navBar/NavBar';
 import './programme.css';

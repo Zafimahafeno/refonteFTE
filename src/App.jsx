@@ -6,8 +6,9 @@ import Reservation from "./pages/reservation/Reservation";
 import Programme from "./pages/programme/Programme";
 import Contact from "./pages/contact/contact";
 import Darkhome from './pages/home/Darkhome';
-import Masterclass from './components/masterclass/masterclass'
-import Sidebar from './components/Sidebar/sidebar';
+// import Masterclass from './components/masterclass/masterclass'
+// import Sidebar from './components/Sidebar/sidebar';
+import ReservationMasterClass from "./pages/reservation/ReservationMasterClass";
 // import contact from './pages/home/Home';
 
 
@@ -16,19 +17,17 @@ function App()
  {
   return (
     <BrowserRouter>
-     
-     <Routes>
+      <Routes>
         <Route path='/' element={<Darkhome/>}></Route>
         <Route path='/Programme' element={<Programme/>}></Route>
-        <Route path='/Reservation' element={<Reservation/>}></Route>
+        <Route path='/Reservation' element={<ReservationMasterClass/>}></Route>
         <Route path='/Jeu' element={<Jeu/>}></Route>
         <Route path='/contact' element={<Contact/>}></Route>
-        </Routes>
+        <Route path='/test' element={<Reservation/>}></Route>
+      </Routes>
     </BrowserRouter>
   )
   
  }
 
  export default App;
-
-

@@ -5,7 +5,7 @@ import { FaLongArrowAltUp} from "react-icons/fa";
 import background from "../../img/landing-bg.mp4";
 import Sidebar from '../../components/Sidebar/sidebar';
 import NavBar from '../../components/navBar/NavBar';
-import Masterclass from "../../components/masterclass/masterclass";
+// import Masterclass from "../../components/masterclass/masterclass";
 import fteAbout from "../../img/fteA.png";
 import Slider from '../../components/slider/slider'
 
@@ -15,7 +15,7 @@ import imagepro1 from '../../img/gallery/3.jpg'
 import imagepro2 from '../../img/gallery/2.jpg'
 import imagepro3 from '../../img/gallery/9.jpg'
 import imagepro4 from '../../img/gallery/4.jpg'
-import imagepro5 from '../../img/gallery/5.jpg'
+// import imagepro5 from '../../img/gallery/5.jpg'
 
 
 
