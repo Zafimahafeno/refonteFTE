@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 // import React, { useState } from 'react';
 // import './Jeux.css';
 // import gifImage from './florid-hands-holding-mobile-game-controller (1).gif';
@@ -14,7 +14,6 @@
 //     dateInscription_pg: '',
 //     payment_pg: '',
 //   });
-=======
 import React from 'react'
 import Sidebar from '../../components/Sidebar/sidebar';
 import NavBar from '../../components/navBar/NavBar';
@@ -29,7 +28,6 @@ function Jeu() {
       </div>
   )
 }
->>>>>>> e45f4ef13f9dc236df580be24f14abc728c6fba8
 
 //   const [formStatus, setFormStatus] = useState(null); // Ajout de la variable d'état
 //   const [file, setFile] = useState({}); // Ajout de la variable d'état
@@ -212,4 +210,4 @@ function Jeu() {
 //   );
 // }
 
-// export default Jeu;
+export default Jeu;

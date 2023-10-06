@@ -1,6 +1,6 @@
 import { FaPause, FaPlay } from 'react-icons/fa';
 import Sidebar from '../../components/Sidebar/sidebar';
-import './reservation.css'
+import './Reservation.css'
 import React, { useState } from 'react';
 import ReactPlayer from "react-player";
 import { CgMenuRight } from "react-icons/cg";

@@ -18,11 +18,8 @@ import Slidercomponent from '../../components/slider/slider'
 import imagepro1 from '../../img/gallery/3.jpg'
 import imagepro2 from '../../img/gallery/2.jpg'
 import imagepro3 from '../../img/gallery/9.jpg'
-<<<<<<< HEAD
 import imagepro4 from '../../img/gallery/4.jpg'
 // import imagepro5 from '../../img/gallery/5.jpg'
-=======
->>>>>>> e45f4ef13f9dc236df580be24f14abc728c6fba8
 
 import imageJeu1 from '../../img/Mannette@4x.png'
 import imageJeu2 from '../../img/Ordinateur@4x.png'
