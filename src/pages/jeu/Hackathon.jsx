@@ -10,22 +10,24 @@ const Hackathon = () => {
     <div className="hackathon">
       <Sidebar />
       <div className="background">
-        <img src={background} alt="" />
-      </div>
-      <div className="contenu">
-        <div className="ordinateur">
-          <img src={ordinateur} alt="" />
-        </div>
-        <div className="content">
-          <h2>NEXT GEN ELO</h2>
-          <h1>BOOSTING</h1>
-          <p>We meet very high requirements that you can expect from a trusted League of Legends ranked service</p>
-          <div>
-            <button className="button">CHECK DEMO</button>
+        <div className="hackathon-content">
+          <div className="contenu">
+            <div className="ordinateur">
+              <img src={ordinateur} alt="" />
+            </div>
+            <div className="content">
+              <h2>NEXT GEN ELO</h2>
+              <h1>BOOSTING</h1>
+              <p>We meet very high requirements that you can expect from a trusted League of Legends ranked service</p>
+              <div>
+                <button className="button">CHECK DEMO</button>
+              </div>
+            </div>
+            
           </div>
         </div>
-        
       </div>
+      
       <Footer />
     </div>
 

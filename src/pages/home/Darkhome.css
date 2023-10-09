@@ -3,9 +3,10 @@
 
 body{
  
-  background-color: #000000 ;
-  background-image: linear-gradient(147deg,#000000 10%,#440f58  74%);
+  background-color: #090426 ;
+  /* background-image: linear-gradient(147deg,#000000 10%,#440f58  74%); */
   color: #fff;
+ 
  
 }
 .first-container{
@@ -472,11 +473,11 @@ body{
 }
 .jeu-descri {
   opacity: 0;
-  transform: translateX(20%); 
-  transition: opacity 0.5s ease-in-out, transform 1s ease-in-out;
+  transform: translateX(5%); 
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
   position: absolute;
   width: 30%;
-  margin: 10% 5% 0 60%;
+  margin: 8% 5% 0 60%;
 }
 
 .jeu-descri.descriActive {
@@ -512,31 +513,32 @@ body{
 
 @media screen and (max-width : 550px ){
   .jeu-container{
-    height: 30vh;
+    height: 40vh;
     
   }
   .jeu-descri h3{
-    font-size: 12px;
+    font-size: 14px;
   }
   .jeu-descri p{
-    font-size: 8px;
+    font-size: 12px;
+    
   }
   .jeu-descri {
     
-    width: 50%;
-    margin: 8% 5% 0 50%;
+    width: 45%;
+    margin: 5% 5% 0 50%;
   }
   .jeu-image{
     width: 50%;
-    margin-top: 8%;
+    margin-top: 15%;
   }
   .jeu-image img{
-    width: 45%;
+    width: 50%;
     
   }
   .btn-16 {
-    
-    font-size: 8px;
+    padding: 1% 7% 1.5% 7%;
+    font-size: 12px;
     
     
   }

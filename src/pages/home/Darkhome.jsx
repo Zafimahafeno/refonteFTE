@@ -14,13 +14,7 @@ import { JeuData } from "../../components/jeuData/JeuData";
 import Slidercomponent from '../../components/slider/slider'
 
 
-// import des images
-import imagepro1 from '../../img/gallery/3.jpg'
-import imagepro2 from '../../img/gallery/2.jpg'
-import imagepro3 from '../../img/gallery/9.jpg'
 
-import imageJeu1 from '../../img/Mannette@4x.png'
-import imageJeu2 from '../../img/Ordinateur@4x.png'
 
 
 

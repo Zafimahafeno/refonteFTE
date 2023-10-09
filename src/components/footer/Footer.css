@@ -1,74 +1,80 @@
 /********************* footer****************** */
 
 .footer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #13021a;
+    margin: 0;
+    background-color: #121112;
+    color: #ffffff92;
   }
-  
+.footer-flex{
+  display: flex;
+  padding: 2% 10%;
+  /* align-items: center; */
+} 
   .footer-logo{
     width: 30%;
-    margin-left: 23%;
+    
   }
   .footer-logo img{
-    width: 25%;
+    width: 60%;
   }
-  .footer-nav{
-   width: 50%;
-   margin-left: 25%;
-   margin-bottom: 2%;
+  .footer-coordonne{
+    margin-right: 10%;
   }
-  .ulFooter{
-    display: flex;
-    flex-direction: row;
-    margin: 0;
-    padding: 0;
+  .footer-coordonne h3 , .reseaux-sociaux h3{
+    font-weight: 500;
   }
-  .ulFooter li{
-    list-style: none;
-    margin-left: 3%;
-    margin-bottom: 0;
+  .footer-coordonne p{
+    font-weight: 200;
+   
   }
-  .navLinkFooter {
-    text-decoration: none;
-    color: #fff;
-  }
-  
-  .navLinkFooter:hover {
-  
-    color: #4ef3ff;
-  }
-  
-  .navLinkFooter.activeFooter {
-    color: #4ef3ff;
-  }
-  .reseaux-sociaux{
+
+  .reseaux-sociaux a{
     
     font-size: 26px;
+    color: #ffffff92;
   }
-  .reseaux-sociaux:hover{
+  .reseaux-sociaux a:hover{
     transform: scale(1.2);
     transition: 0.2s;
-    color: #4ef3ff;
+    color: #4e9eff;
   }
   .copyright p{
     font-weight:100 ;
+    margin: 0 ;
+    text-align: center;
+    
+  }
+  .dropdown-navlink{
+    color: #fff;
+    text-decoration: none;
+     
+  }
+ .dropdown-content{
+   background-color: black;
+   position: absolute;
+   margin: 2% 0 0 32%;
+   padding: 1% 3%;
+ }
+  @media screen and (max-width : 550px ){
+    .footer{
+      padding-bottom: 5%;
+    
+    }
+   .footer-flex{
+    flex-direction: column;
+   
+    padding: 8%;
+   }
+   .footer-logo{
+    width: 80%;
+   }
+   .footer-coordonne h3 , .reseaux-sociaux h3{
+   font-size: 16px;
+  }
+  .footer-coordonne p{
+    font-size: 14px;
+   
   }
 
-  @media screen and (max-width : 550px ){
-    .footer-logo{
-        width: 100%;
-        margin-left: 75%;
-    }
-    .footer-nav{
-        margin-left: 0;
-    }
-    .ulFooter{
-        flex-direction: column;
-        text-align: center;
-    }
-    .ulFooter li{
-        padding: 5% 0;
-    }
+  
   }

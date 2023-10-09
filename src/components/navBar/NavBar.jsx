@@ -1,24 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useSpring, animated } from 'react-spring';
-import { NavLink } from "react-router-dom";
+import {Link } from "react-router-dom";
 import './NavBar.css';
 import fte from "../../img/fte.png";
+import Dropdown1 from '../Sidebar/dropdown1';
+import Dropdown2 from '../Sidebar/dropdown2';
 
 const NavBar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
-    const [navbarActive, setNavbarActive] = useState("navbar-content");
-    const [toggleIcon, setToggleIcon] = useState("navbar-toggle");
-    const [activeLink, setActiveLink] = useState("");
-  
-    const navToggle = () => {
-      if (navbarActive === "navbar-content") {
-        setNavbarActive("navbar-content navbar-active");
-        setToggleIcon("navbar-toggle toggle");
-      } else {
-        setNavbarActive("navbar-content");
-        setToggleIcon("navbar-toggle");
-      }
-    };
     const handleScroll = () => {
         if (window.scrollY > 100) {
             setIsScrolled(true);
@@ -38,105 +27,96 @@ const NavBar = () => {
         opacity: isScrolled ? 1 : 0,
         transform: isScrolled ? 'translateY(0)' : 'translateY(-10%)',
     });
-    const [showDropdown, setShowDropdown] = useState(false);
-    const [dropdownHover, setDropdownHover] = useState(false);
-    const handleMouseEnter = () => {
-      setShowDropdown(true);
+    const [click, setClick] = useState(false);
+    const [dropdown1,setDropdown1] = useState(false);
+    const [dropdown2,setDropdown2] = useState(false);
+    const [activeNavItem, setActiveNavItem] = useState(null);
+    const onMouseEnter1 = () => {
+      if (window.innerWidth < 960) {
+        setDropdown1(false);
+      } else {
+        setDropdown1(true);
+        
+      }
+     
     };
-  
-    const handleMouseLeave = () => {
-      if (!dropdownHover) {
-        setShowDropdown(false);
+    const onMouseEnter2 = () => {
+      if (window.innerWidth < 960) {
+        setDropdown2(false);
+      } else {
+        setDropdown2(true);
+        
       }
     };
   
-    const handleClick = () => {
-      setShowDropdown(!showDropdown);
+    const onMouseLeave1 = () => {
+      if (window.innerWidth < 960) {
+        setDropdown1(false);
+      } else {
+        setDropdown1(false);
+      }
     };
+    const onMouseLeave2 = () => {
+      if (window.innerWidth < 960) {
+        setDropdown2(false);
+      } else {
+        setDropdown2(false);
+      }
+    };
+    const handleNavItemClick = (itemName) => {
+      if (activeNavItem === itemName) {
+        setActiveNavItem(null); 
+      } else {
+        setActiveNavItem(itemName);
+        
+      }
+    };
+    const handleClick = () => setClick (!click);
+    const showDropdown1 = () => setDropdown1 (!dropdown1);
+    const showDropdown2 = () => setDropdown2 (!dropdown2);
+    const closeMobileMenu = () => setClick (false);
   
-    
   
     return (
         <animated.nav style={navBarAnimation} className={isScrolled ? "navBar scrolled" : "navBar notScrolled"}>
-            <div className="navbar-logo">
-             <a href="/">
-                 <img src={fte} alt="" />
-             </a>
+           <nav className="navbar">
+        <Link to = '/' className='navbar-logo'>
+           <img src={fte} alt="Logo Fte" />
+        </Link>
+        <div className="menu-icon" onClick={handleClick}>
+         <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
+        </div>
+        <ul className={click ? 'nav-menu active' :  'nav-menu'}>
+          <li className={`nav-item ${activeNavItem === 'Accueil' ? 'active' : ''}`}  onClick={() => handleNavItemClick('Accueil')}>
+            <Link to= '/' className="nav-links" onClick={closeMobileMenu}>
+               Acceuil
+            </Link>
+          </li>
+            <li className={`nav-item ${activeNavItem === 'Agenda' ? 'active' : ''}`} onClick={() => handleNavItemClick('Agenda')}>
+            <Link to= '/Programme' className="nav-links" onClick={closeMobileMenu}>
+               Agenda
+            </Link>
+          </li>
+          <li className={`nav-item`} onClick={() => handleNavItemClick('Concours')}
+          onMouseEnter={onMouseEnter1}
+          onMouseLeave={onMouseLeave1}>
+            <div  className="nav-links"onClick={() =>{
+              showDropdown1()}}>
+               Concours <i className='fas fa-caret-down' />
             </div>
-            <ul className={navbarActive}>
-                <li>
-                <NavLink className={activeLink === "Accueil" ? "navLink active" : "navLink"} to="/" onClick={() => setActiveLink("Accueil")}>
-            Accueil
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            className={activeLink === "Programme" ? "navLink active" : "navLink"}
-            to="/Programme"
-            onClick={() => setActiveLink("Programme")}
-          >
-            Programme
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            className={activeLink === "Reservation" ? "navLink active" : "navLink"}
-            to="/Reservation"
-            onClick={() => setActiveLink("Réservation")}
-          >
-            Concours
-          </NavLink>
-        </li>
-        <li>
-        
-          <div 
-          className={`navLink ${showDropdown ? 'active' : ''}`} id="dropdown"
-         
-          onClick={handleClick}
-          >
-            Je participe
-          </div>
-          { showDropdown &&(
-            <ul className="dropdown-content"
-           
-            >
-            <li>
-                <NavLink
-                  to="/Reservation"
-                  onClick={() => {
-                    setActiveLink("Reservation");
-                    setShowDropdown(true);
-                  }}
-                  
-                  className="dropdown-navlink"
-                >
-                  Reservation
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/Partenariat"
-                  onClick={() => {
-                    setActiveLink("Partenariat");
-                    setShowDropdown(false);
-                  }}
-                  className="dropdown-navlink"
-                >
-                  Partenariat
-                </NavLink>
-              </li>
-            </ul>
-          )}
-        </li>
-        
-       
-      </ul>
-
-      <div onClick={navToggle} className={toggleIcon}>
-        <div className="line1"></div>
-        <div className="line2"></div>
-        <div className="line3"></div>
-      </div>
+            {dropdown1 && <Dropdown1/>}
+          </li>
+          <li className={`nav-item`}  onClick={() => handleNavItemClick('JeParticipe')}
+          onMouseEnter={onMouseEnter2}
+          onMouseLeave={onMouseLeave2}>
+            <div  className="nav-links" onClick={() =>{
+              showDropdown2()}}>
+               Je participe<i className='fas fa-caret-down' />
+            </div>
+              {dropdown2 && <Dropdown2/>}
+          </li>
+        </ul>
+      </nav>
         </animated.nav>
     );
 }

@@ -138,7 +138,7 @@ const Partenariat = () => {
                         updateBoiteActif(swiper.activeIndex + 1);
                       }}
                 >
-                    <SwiperSlide>
+                    <SwiperSlide className='swiper-slide1'>
                         <div  className="pt-boite un" onClick={()=>updateBoiteActif(1)}>
                 
                         <div className="pt-titre">
@@ -153,7 +153,7 @@ const Partenariat = () => {
                             
                         </div>
                     </SwiperSlide>
-                    <SwiperSlide>
+                    <SwiperSlide  className='swiper-slide1'>
                         <div  className="pt-boite deux" onClick={()=>updateBoiteActif(2)}>
                     
                         <div className="pt-titre">
@@ -169,7 +169,7 @@ const Partenariat = () => {
                         </div>
           
                     </SwiperSlide>
-                    <SwiperSlide>
+                    <SwiperSlide  className='swiper-slide1'>
                          <div className="pt-boite trois" onClick={()=>updateBoiteActif(3)}>
                    
                          <div className="pt-titre">
@@ -184,7 +184,7 @@ const Partenariat = () => {
                             
                         </div>
                     </SwiperSlide>
-                    <SwiperSlide>
+                    <SwiperSlide  className='swiper-slide1'>
                         <div className="pt-boite quatre" onClick={()=>updateBoiteActif(4)}>
                 
                         <div className="pt-titre">

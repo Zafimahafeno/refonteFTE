@@ -1,0 +1,122 @@
+.stand-illustration{
+  margin: 0 0 0 12%;
+}
+.stand-slider
+    {
+        width: 70vw;
+        height: 70vh;
+        padding-top:5%;
+        margin: 0 0 0 12%;
+        z-index: 5;
+  
+    }
+
+    /* le swiper slide */
+   
+   
+    
+    .swiper-slide2 {
+      background-position: center;
+      background-size: cover;
+      width: 40%;
+      height: 40%; 
+      margin: 0 1%;
+     
+      filter: blur(2px);
+    }
+    .swiper-slide-active.swiper-slide2{
+        filter: blur(0px);
+    }
+
+    .swiper-slide2 img {
+      display: block;
+      width: 100%;
+    }
+    .bouton{
+        position: absolute;
+        cursor: pointer;
+        padding:5% 5% 4% 6%;
+        border-radius: 50%; 
+        text-align: center;
+        font-size: 46px;
+        margin: 25% 0 0 40%;
+        
+    }
+    .bouton:hover{
+      transform: scale(1.1);
+      transition: 0.2s;
+    }
+   
+    .stand-info{
+      text-align: center;
+      margin-top: 5%;
+      display: none;
+    }
+    .swiper-slide-active .stand-info {
+      display: block;
+    }
+    .stand-name{
+        font-size: 32px;
+        font-weight: 500;
+        text-transform: uppercase;
+        
+     }
+     .stand-bouton{
+      border: 0;
+      background: linear-gradient(to right, #1b8af8, #c600fd,#ff0055);
+      padding: 2% 10%;
+      margin-top: 5% ;
+      cursor: pointer;
+      color: #fff;
+     }
+     .stand-bouton:hover{
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+     }
+    
+
+ @media screen and (max-width : 1024px)and (min-width : 769px){
+  .stand-slider
+    {
+        padding-top:15%;
+    }
+}
+@media screen and  (max-width : 768px) and (min-width : 421px){
+  .stand-slider{
+    width: 80vw;
+    height: 80vh;
+  }
+  .bouton{
+    font-size: 40px;
+  }
+  .swiper-slide2 {
+   
+    width: 60%;
+    height: 60%; 
+  
+  }
+}
+@media screen and  (max-width : 420px){
+  .stand-illustration{
+    margin: 0 0 0 5%;
+  }
+  .stand-slider{
+    width: 90vw;
+    height: 80vh;
+    margin-left: 5%;
+  }
+  .bouton{
+    font-size: 40px;
+  }
+  .swiper-slide2 {
+   
+    width: 70%;
+    height: 70%; 
+  
+  }
+  .stand-name{
+    font-size: 24px;
+   
+    
+ }
+}
+

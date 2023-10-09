@@ -7,8 +7,8 @@
   margin: 10% 0 2% 15% ;
   height: 55%;
   width: 70%;
-  background-color: #000000 ;
-  background-image: linear-gradient(147deg,#440f58 10%, #000000 74%);
+  background-color: #0e0542 ;
+  /* background-image: #15085d; */
   display: flex;
   flex-direction: row;
   border-radius: 25px;

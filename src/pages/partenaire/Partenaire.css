@@ -6,7 +6,7 @@
     flex-direction: row;
     /* width: 80%; */
     /* height: 100vh; */
-   
+    z-index: 3;
     padding: 0 5% 5% 5%;
     /* margin: 3%  0 0 10%; */
 }
@@ -17,7 +17,9 @@
     margin: 5% 3% 0 3%;
     padding: 2%;
     border-radius: 0 0 25px 0;
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    
+  
 }
 .pt-boite:hover{
     transform: scale(1.1);
@@ -110,12 +112,13 @@
 .pt-container-responsive{
     display: none;
 }
-.swiper {
+.mySwiper {
     width: 100%;
     height: 100%;
+    z-index: 3!important;
   }
   
-  .swiper-slide {
+  .swiper-slide1 {
     width: 40%;
   }
   
@@ -130,7 +133,7 @@
         /* flex-wrap: wrap; */
         padding: 5% 5% 0 5%;
         height: 100vh;
-       
+      
        
     }
     .pt-boite{
@@ -165,13 +168,13 @@
         position: relative;
     }
 
-    .swiper {
+    .mySwiper {
         width: 100%;
         height: 40vh;
-        
+        z-index: 3!important;
       }
 
-    .swiper-slide{
+    .swiper-slide1{
         padding: 10% 0 0 0;
     }
  
@@ -185,10 +188,10 @@
         padding: 5%;
        
     }
-    .swiper-slide{
+    .swiper-slide1{
         padding: 8% 0 0 0;
     }
-    .swiper {
+    .mySwiper {
         width: 100%;
         height: 50vh;
         
@@ -204,13 +207,13 @@
         padding: 5%;
        
     }
-    .swiper-slide{
+    .swiper-slide1{
         padding: 8% 0 0 0;
     }
-    .swiper {
+    .mySwiper {
         width: 100%;
         height: 45vh;
-        
+        z-index: 3!important;
       }
       .pt-bouton a .pt-contenu{
         font-size: 10px;
@@ -224,10 +227,10 @@
        
     }
     
-    .swiper {
+    .mySwiper {
         width: 100%;
         height: 50vh;
-        
+        z-index: 3!important;
       }
       .pt-bouton a {
         font-size: 12px;
