@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import Sidebar from '../../components/Sidebar/sidebar';
 import Footer from '../../components/footer/Footer';
 import './programme.css';

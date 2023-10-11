@@ -25,35 +25,34 @@ const Slidercomponent = () => {
         id: 2,
         image:image2,
         title:'LAMSECK',
-        text: 'lalalalalaaaaaaaaaaaaaaaaaaaaalalalalalallalalalaalalala alalalalaaaaaaaaaaaaaaaaaaaaalalalalalallalalalaalalala',
+        text: 'Une entreprise de communication digitale, basée à Fianarantsoa depuis 4 ans , ayant comme vision ambitieuse d’ être le catalyseur du succès en ligne des clients, en les aidant à atteindre leurs objectifs et à se démarquer dans un monde numérique en constante évolution.',
         
     },
     {
         id: 3,
         image:image3,
         title:'ENI',
-        text: 'lalalalalaaaaaaaaaaaaaaaaaaaaalalalalalallalalalaalalala alalalalaaaaaaaaaaaaaaaaaaaaalalalalalallalalalaalalala',
+        text: 'Une entreprise de communication digitale, basée à Fianarantsoa depuis 4 ans , ayant comme vision ambitieuse d’ être le catalyseur du succès en ligne des clients, en les aidant à atteindre leurs objectifs et à se démarquer dans un monde numérique en constante évolution.'
        
     },
     {
         id: 4,
         image:image2,
         title:'EMIT',
-        text: 'lalalalalaaaaaaaaaaaaaaaaaaaaalalalalalallalalalaalalala alalalalaaaaaaaaaaaaaaaaaaaaalalalalalallalalalaalalala',
-       
+        text: 'Une entreprise de communication digitale, basée à Fianarantsoa depuis 4 ans , ayant comme vision ambitieuse d’ être le catalyseur du succès en ligne des clients, en les aidant à atteindre leurs objectifs et à se démarquer dans un monde numérique en constante évolution.'
     },
     {
         id: 5,
         image:image3,
         title:'MADE IN MADA',
-        text: 'lalalalalaaaaaaaaaaaaaaaaaaaaalalalalalallalalalaalalala alalalalaaaaaaaaaaaaaaaaaaaaalalalalalallalalalaalalala',
+        text: 'Une entreprise de communication digitale, basée à Fianarantsoa depuis 4 ans , ayant comme vision ambitieuse d’ être le catalyseur du succès en ligne des clients, en les aidant à atteindre leurs objectifs et à se démarquer dans un monde numérique en constante évolution.'
         
     },
     {
         id: 6,
         image:image1,
         title:'TSARASOA LABEL',
-        text: 'lalalalalaaaaaaaaaaaaaaaaaaaaalalalalalallalalalaalalala alalalalaaaaaaaaaaaaaaaaaaaaalalalalalallalalalaalalala',
+        text: 'Une entreprise de communication digitale, basée à Fianarantsoa depuis 4 ans , ayant comme vision ambitieuse d’ être le catalyseur du succès en ligne des clients, en les aidant à atteindre leurs objectifs et à se démarquer dans un monde numérique en constante évolution.'
        
     }
 ];
@@ -85,7 +84,7 @@ const sliderDataThumbs = [
   }
 ];
   const [currentIndex, setCurrentIndex] = useState(1); // Initialisé à 1
-  const delay = 5000; 
+  const delay = 18000; 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex === sliderData.length - 1 ? 0 : prevIndex + 1));
   };
@@ -127,10 +126,10 @@ const sliderDataThumbs = [
              {sliderData.map((slide, index) => (
                 <div
                   key={index}
-                  className={`slider-descri ${index === currentIndex ? "descriActive" : ""}`}
+                  className='slide-descri'
                 >
-                  <h1 className="slider-title">{slide.title}</h1>
-                  <p className="slider-text">{slide.text}</p>
+                  <h1 className={`slider-title ${index === currentIndex ? "titleActive" : ""}`}>{slide.title}</h1>
+                  <p className={`slider-text ${index === currentIndex ? "textActive" : ""}`}>{slide.text}</p>
                 </div>
               ))}
                

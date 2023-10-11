@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import './sidebar.css';
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import fte from "../../img/fte.png";
 import Dropdown1 from './dropdown1';
 import Dropdown2 from './dropdown2';
@@ -58,22 +58,22 @@ const Sidebar = () => {
   return(
     <div className="fte-navbar">
       <nav className="navbar">
-        <Link to = '/' className='navbar-logo'>
+        <NavLink to = '/' className='navbar-logo'>
            <img src={fte} alt="Logo Fte" />
-        </Link>
+        </NavLink>
         <div className="menu-icon" onClick={handleClick}>
          <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
         </div>
         <ul className={click ? 'nav-menu active' :  'nav-menu'}>
           <li className={`nav-item ${activeNavItem === 'Accueil' ? 'active' : ''}`}  onClick={() => handleNavItemClick('Accueil')}>
-            <Link to= '/' className="nav-links" onClick={closeMobileMenu}>
+            <NavLink to= '/' className="nav-links" onClick={closeMobileMenu}>
                Acceuil
-            </Link>
+            </NavLink>
           </li>
             <li className={`nav-item ${activeNavItem === 'Agenda' ? 'active' : ''}`} onClick={() => handleNavItemClick('Agenda')}>
-            <Link to= '/Programme' className="nav-links" onClick={closeMobileMenu}>
+            <NavLink to= '/Programme' className="nav-links" onClick={closeMobileMenu}>
                Agenda
-            </Link>
+            </NavLink>
           </li>
           <li className={`nav-item`} onClick={() => handleNavItemClick('Concours')}
           onMouseEnter={onMouseEnter1}

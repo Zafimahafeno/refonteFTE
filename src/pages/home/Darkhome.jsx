@@ -6,12 +6,15 @@ import { FaLongArrowAltUp} from "react-icons/fa";
 import background from "../../img/landing-bg.mp4";
 import Sidebar from '../../components/Sidebar/sidebar';
 import NavBar from '../../components/navBar/NavBar';
-import Masterclass from "../../components/masterclass/masterclass";
+// import Masterclass from "../../components/masterclass/masterclass";
 import fteAbout from "../../img/fteA.png";
 import Footer from "../../components/footer/Footer";
 import { JeuData } from "../../components/jeuData/JeuData";
 
 import Slidercomponent from '../../components/slider/slider'
+
+
+
 
 
 
@@ -53,14 +56,12 @@ const Darkhome = () =>{
 
   // slide jeu
   const [currentIndex, setCurrentIndex] = useState(1); // Initialisé à 1
-  const delay = 5000; 
+  const delay = 10000; 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex === JeuData.length - 1 ? 0 : prevIndex + 1));
   };
 
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === 0 ? JeuData.length - 1 : prevIndex - 1));
-  };
+ 
   useEffect(() => {
     // Démarrez le défilement automatique lorsque le composant est monté
     const intervalId = setInterval(nextSlide, delay);

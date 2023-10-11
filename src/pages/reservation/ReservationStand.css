@@ -1,5 +1,10 @@
 .stand-illustration{
-  margin: 0 0 0 12%;
+  margin: 5% 0 0 12%;
+}
+.stand-illustration h2{
+  margin-left: 26%;
+  font-size: 32px;
+  
 }
 .stand-slider
     {

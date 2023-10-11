@@ -10,8 +10,8 @@ const Dropdown1 = () =>{
 
     return(
         <>
-           <ul onClick={handleClick} 
-            className={ click? 'dropdown-menu clicked' : 'dropdown-menu'}>
+           <ul onClick={handleClick}  id="un"
+            className={ click? 'dropdown-menu clicked' : 'dropdown-menu '}>
                 <li>
                 <Link
                   to="/Jeu"
