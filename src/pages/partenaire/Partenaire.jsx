@@ -67,7 +67,8 @@ const Partenariat = () => {
                      Sponsors Officiel
                    </div>
                    <div className="pt-contenu">
-                       petite contenu a propos
+                    Soutenez en première ligne l'événement avec des engagements significatifs,  tout en bénéficiant d'une visibilité 
+                    exceptionnelle auprès d'une audience engagée et passionnée.  
                    </div>
                    <div className="pt-bouton">
                        <a href=""> Je participe </a>
@@ -80,7 +81,8 @@ const Partenariat = () => {
                      Sponsors 
                    </div>
                    <div className="pt-contenu">
-                       petite contenu a propos
+                    Associez-vous à nous, contribuez à créer des idées innovatrices 
+                    et profitez d'une visibilité auprès d'une audience engagée. 
                    </div>
                    <div className="pt-bouton">
                        <a href=""> Je participe </a>
@@ -95,7 +97,8 @@ const Partenariat = () => {
                      Partenaire Officiel
                    </div>
                    <div className="pt-contenu">
-                       petite contenu a propos
+                    Votre implication en tant que partenaire serait un renfort
+                    appréciable pour concrétiser notre vision commune.
                    </div>
                    <div className="pt-bouton">
                        <a href=""> Je participe </a>
@@ -108,7 +111,9 @@ const Partenariat = () => {
                      Partenaire
                    </div>
                    <div className="pt-contenu">
-                       petite contenu a propos
+                   Diffusez l'innovation à un public plus large.
+                    Votre soutien est une passerelle vers la visibilité et l'influence.
+
                    </div>
                    <div className="pt-bouton">
                        <a href=""> Je participe </a>
@@ -145,7 +150,8 @@ const Partenariat = () => {
                             Sponsors Officiel
                         </div>
                         <div className="pt-contenu">
-                            petite contenu a propos
+                        Soutenez en première ligne l'événement avec des engagements significatifs,  tout en bénéficiant d'une visibilité 
+                         exceptionnelle auprès d'une audience engagée et passionnée. 
                         </div>
                         <div className="pt-bouton">
                             <a href=""> Je participe </a>
@@ -160,7 +166,8 @@ const Partenariat = () => {
                             Sponsors 
                         </div>
                         <div className="pt-contenu">
-                            petite contenu a propos
+                        Associez-vous à nous, contribuez à créer des idées innovatrices 
+                        et profitez d'une visibilité auprès d'une audience engagée. 
                         </div>
                         <div className="pt-bouton">
                             <a href=""> Je participe </a>
@@ -176,7 +183,8 @@ const Partenariat = () => {
                             Partenaire Officiel
                         </div>
                         <div className="pt-contenu">
-                            petite contenu a propos
+                        Votre implication en tant que partenaire serait un renfort
+                    appréciable pour concrétiser notre vision commune.
                         </div>
                         <div className="pt-bouton">
                             <a href=""> Je participe </a>
@@ -191,7 +199,8 @@ const Partenariat = () => {
                             Partenaire
                         </div>
                         <div className="pt-contenu">
-                            petite contenu a propos
+                        Diffusez l'innovation à un public plus large.
+                    Votre soutien est une passerelle vers la visibilité et l'influence.
                         </div>
                         <div className="pt-bouton">
                             <a href=""> Je participe </a>

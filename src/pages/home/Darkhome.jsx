@@ -1,12 +1,13 @@
 import React,{useEffect,useState} from "react";
 
 import './Darkhome.css';
-import { FaLongArrowAltUp} from "react-icons/fa";
+import { FaAngleUp} from "react-icons/fa";
  
 import background from "../../img/landing-bg.mp4";
 import Sidebar from '../../components/Sidebar/sidebar';
 import NavBar from '../../components/navBar/NavBar';
-// import Masterclass from "../../components/masterclass/masterclass";
+import Masterclass from "../../components/masterclass/masterclass";
+import SlideProgramme from "../../components/sliderProgramme/SlideProgramme";
 import fteAbout from "../../img/fteA.png";
 import Footer from "../../components/footer/Footer";
 import { JeuData } from "../../components/jeuData/JeuData";
@@ -96,7 +97,7 @@ const Darkhome = () =>{
                          <h1> <span>FIANARA <span>TECH</span> EXPO</span></h1>
                         
                          <button className="about-btn" onClick={scrollToSection}>
-                            À propos de l'événement
+                          Découvrez l'événement
                          </button>
                           {/* <a href="#" className='play-btn'> <FaPlayCircle /></a> */}
                       </div>
@@ -133,7 +134,7 @@ const Darkhome = () =>{
 
               
                 {/* section programme */}
-
+                <SlideProgramme/>
 
               {/* Jeu et Hackathon  */}
               <div className="jeu-container">
@@ -174,7 +175,7 @@ const Darkhome = () =>{
 
 
                 {/* section masterclass */}
-              {/* <Masterclass/> */}
+              <Masterclass/>
 
               
                {/* ****section de presentation des organisateurs */}
@@ -185,7 +186,7 @@ const Darkhome = () =>{
                {/* le bouton back to top  */}
                {showBackToTop && (
                     <div className="back-to-top back-to-top-fixed">
-                        <button onClick={toTop} className="top"><FaLongArrowAltUp/></button>
+                        <button onClick={toTop} className="top"><FaAngleUp/></button>
                     </div>
                  )}
 

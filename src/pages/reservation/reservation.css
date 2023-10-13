@@ -340,18 +340,43 @@
     cursor: pointer;
 }
 /* responsive */
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 1024px) and (min-width :551px ){
+  .reservationMasterClass .content{
+    margin-top: 5px;
+    padding-bottom: 2%;
+  }
+  .content-left{
+    margin: 0 0 3% 3%;
+  }
+  
+}
+@media screen and (max-width: 550px) {
+   
+    .reservationMasterClass .container{
+        height: 100vh;
+    }
+    .reservationMasterClass .content{
+        padding-bottom: 80%;
+    }
     .place {
         width: 18px;
         height: 18px;
         border-radius: 8px;
+        
     }
     .content-right .header .personereserver {
         display: none;
     }
+    .content-right{
+        margin-top: 15%;
+        
+    }
     .content-right .header {
         display: flex;
         justify-content: center;
+    }
+    .contenright .place {
+        margin-left: 1%;
     }
     .content-right .footerright {
         display: flex;

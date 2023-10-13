@@ -6,7 +6,7 @@ import './masterclass.css'
 
 const Masterclass = () => {
   const [currentIndex, setCurrentIndex] = useState(1); // Initialisé à 1
-  const delay = 3000; 
+  const delay = 5000; 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex === MasterclassData.length - 1 ? 0 : prevIndex + 1));
   };
@@ -23,21 +23,22 @@ const Masterclass = () => {
   }, []);
 
   return (
-    <div className="slider-section">
-        <div className="titre-container">
-           <div className="tiret"></div>
-           <div className="about-titre">
-               <h2></h2>
-           </div>
-        </div>
-               
-       
-         <div className="slider-container">
-           
-            <div className="image-info">
-             <h2>{MasterclassData[currentIndex].title}</h2>
-             <p>{MasterclassData[currentIndex].name} , {MasterclassData[currentIndex].fonction}  </p>
-           </div>
+    <div className="MasterClassSlider-section">     
+        <div className="Masterclass-bg">
+          <div className="slider-container">
+            
+            {/* <div className="image-info">
+              <h2>{MasterclassData[currentIndex].title}</h2>
+             
+            </div> */}
+            {MasterclassData.map((slide, index) => (
+                <div
+                  key={index}
+                  className='image-info'
+                >
+                  <h2 className={`image-title ${index === currentIndex ? "imageTitleActive" : ""}`}>{slide.title}</h2>
+                </div>
+              ))}
             
             <div className="thumbnails-container">
             {MasterclassThumbs.map((thumb,index) => (
@@ -54,18 +55,26 @@ const Masterclass = () => {
                 
                 <span>{thumb.name}</span>
               </div> */}
-              <div className="thumbnail-date"><FaCalendar /> {thumb.date}</div>
-              <div className="thumbnail-heure"><FaClock /> {thumb.heure}</div>
+              <div className="thumbnail-date"> {thumb.date}</div>
+              <div className="thumbnail-heure">{thumb.heure}</div>
                 
             </div>
           
             
               ))}
             </div>     
-         </div>
-         {/* <button onClick={prevSlide}>Précédent</button>
-       <button onClick={nextSlide}>Suivant</button> */}
-          <img className='image' src={MasterclassData[currentIndex].src} alt={`Slide ${currentIndex}`} />  
+          </div>
+          {MasterclassData.map((slide, index) => (
+            <img
+              key={slide.id}
+              src={slide.src}
+              alt={`Slide ${currentIndex}`}
+              className={`fade-in-up ${index === currentIndex ? 'imageActive' : ''}`} 
+            />
+          ))}
+           
+        </div>
+         
 
     </div>
 
