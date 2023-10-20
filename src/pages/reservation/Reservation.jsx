@@ -1,18 +1,17 @@
+/* eslint-disable react/jsx-no-undef */
 import Footer from "../../components/footer/Footer";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay, EffectCoverflow } from "swiper/modules";
 import "swiper/css";
-
+import { NavLink } from 'react-router-dom';
+import Sidebar from '../../components/Sidebar/sidebar';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
 import ReactPlayer from "react-player";
 import { FaPlay } from 'react-icons/fa';
 import './ReservationStand.css';
-
-
-
-
+import Stand from './Stand';
 
 // import d'image
 import sary1 from '../../img/stand/1 (2).jfif';
@@ -23,6 +22,23 @@ import video2 from '../../img/stand/video2.mp4';
 import video3 from '../../img/stand/video3.mp4';
 
 const Reservation = () => {
+  const [showModal, setShowModal] = useState(false);
+  // Références aux instances de Swiper
+  const heroSwiperRef = useRef(null);
+  const handleReserveClick = () => {
+     // Arrêter le Swiper lorsque la fenêtre modale s'affiche
+     if (heroSwiperRef.current) {
+      heroSwiperRef.current.autoplay.stop();
+    }
+    setShowModal(true);
+  }
+  const closeAndPlayHero = () => {
+    // Redémarrer le Swiper lorsque la fenêtre modale est fermée
+    if (heroSwiperRef.current) {
+      heroSwiperRef.current.autoplay.start();
+    }
+    setShowModal(false);
+  };
 
 
   const standData = [
@@ -88,7 +104,6 @@ const Reservation = () => {
   return (
     <div className='reservation-stand'>
 
-      
       <div className="stand-illustration">
         <h2> Visiter et réserver votre stand </h2>
         <p>Mettre des descriptions pour illustrer le slide ci apres. vous pouvez mettre ce que vous voulez ,long ou court mais ayez dela bonne inspiration.</p>
@@ -156,7 +171,10 @@ const Reservation = () => {
 
               <div className={`stand-info ${showimg ? 'active' : ''}`}>
                 <div className='stand-name'>{data.name}</div>
-                <button className='stand-bouton'>Reserver</button>
+                <br />
+                <button onClick={handleReserveClick}>Réserver</button>
+                {/* Affichez la fenêtre modale si showModal est true */}
+        {showModal && <Stand onClose={closeAndPlayHero} />}
               </div>
             </SwiperSlide>
           ))}

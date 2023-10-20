@@ -1,214 +1,130 @@
-
-
-// import React, { useState } from 'react';
-// import './Jeux.css';
-// import gifImage from './florid-hands-holding-mobile-game-controller (1).gif';
-// import axios from 'axios';
-
-// function Jeu() {
-//   const [inputs, setInputs] = useState({
-//     name_pg: '',
-//     mail_pg: '',
-//     number_pg: '',
-//     phone_pg: '',
-//     name_lg: '',
-//     dateInscription_pg: '',
-//     payment_pg: '',
-//   });
-import React from 'react'
+/* eslint-disable no-restricted-globals */
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useState, useEffect, useRef } from 'react';
 import Sidebar from '../../components/Sidebar/sidebar';
-import fond from '../../img/Plan de travail 1@4x.png'
+import NavBar from '../../components/navBar/NavBar';
+import fond from '../../img/Plan de travail 1@4x1.png';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import './Jeu.css';
+import { NavLink } from 'react-router-dom'; // Importez NavLink depuis react-router-dom
 
 function Jeu() {
+  const games = [
+    {
+      name: 'FIFA',
+      logo: '/FIFA.jpg',
+      description: "Les matchs de FIFA en compétition ont généralement une durée prédéterminée, souvent de 10 à 15 minutes par mi-temps. La durée totale d'un match est donc de 20 à 30 minutes."
+    },
+    {
+      name: 'FREE FIRE',
+      logo: '/free fire.webp',
+      description: "Les compétitions de Free Fire sont généralement jouées en équipe, avec des équipes composées de 4 à 5 joueurs. Chaque équipe se bat pour être la dernière debout sur une île après avoir été larguée depuis un avion.",
+    },
+    {
+      name: 'PES',
+      logo: '/pes.jpg',
+      description: "Les tournois de PES peuvent avoir différents formats, y compris des phases de groupes suivies d'éliminations directes, où les perdants sont éliminés progressivement jusqu'à ce qu'il ne reste plus qu'un seul gagnant.",
+    },
+    {
+      name: 'CALL OF DUTY',
+      logo: '/call.jpg',
+      description: "Les équipes marquent des points en éliminant les membres de l'équipe adverse et en atteignant les objectifs du mode de jeu. Les points peuvent également être attribués en fonction de la position finale de l'équipe.",
+    },
+    {
+      name: 'BLUR',
+      logo: '/blur.jpg',
+      description: "Les compétitions de Blur se déroulent sur une variété de circuits, chacun ayant ses propres défis et particularités. Les circuits peuvent être sélectionnés en fonction des préférences des organisateurs de tournoi.",
+    },
+    // Ajoutez les autres jeux de la même manière
+  ];
+
+  const [activeGame, setActiveGame] = useState(games[0]);
+  const [sliderIndex, setSliderIndex] = useState(0); // Démarrez à partir du premier jeu
+  const sliderRef = useRef(null);
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    vertical: true,
+    verticalSwiping: true,
+    centerMode: true,
+    centerPadding: '0',
+    beforeChange: (current, next) => {
+      setSliderIndex(next);
+    },
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const nextIndex = (sliderIndex + 1) % games.length;
+      setActiveGame(games[nextIndex]);
+      sliderRef.current.slickNext();
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [sliderIndex, games]);
+
+  const slideTo = (index) => {
+    sliderRef.current.slickGoTo(index);
+    setSliderIndex(index);
+    setActiveGame(games[index]);
+  };
+
   return (
     <div className='jeu'>
-      <Sidebar/>
-      div
-      <img src={fond} alt="" />
+      
+      <Sidebar />
+      <img src={fond} alt='' />
+      <div className='jeu-content'>
+        <div className='menu-jeux'>
+         
+          {games.map((game, index) => (
+            <div
+              key={game.name}
+              className={`jeu-button ${game.name === activeGame.name ? 'active' : ''}`}
+              onClick={() => slideTo(index)}
+            >
+              {game.name}
+            </div>
+          ))}
+           
+          
+        </div>
+        <div className='slider-container'>
+          <Slider {...settings} ref={sliderRef}>
+            {games.map((game, index) => (
+              <div key={game.name} className={`game-name ${game.name === activeGame.name ? 'active' : ''}`}>
+              <img src={game.logo} alt={game.name} />
+              <h3>{game.name}</h3>
+              <br />
+              <p>{game.description}</p>
+              <br />
+                <NavLink // Utilisez NavLink pour créer le lien vers '/jeux'
+                  className='participer-button'
+                  to='/jeux'
+                >
+                  Participer
+                </NavLink>
+              </div>
+              
+            ))}
+          </Slider>
+          <br />
+          <br />
+          <div
+            className='jeu-button down-arrow'
+            onClick={() => slideTo((sliderIndex + 1) % games.length)}
+          >
+            &#8595; {/* Down Arrow */}
+          </div>
+        </div>
       </div>
-  )
+    </div>
+  );
 }
 
-//   const [formStatus, setFormStatus] = useState(null); // Ajout de la variable d'état
-//   const [file, setFile] = useState({}); // Ajout de la variable d'état
-
-//   const handleInputChange = (event) => {
-//     const { name, value, } = event.target;
-//     setInputs((prevData) => ({
-//       ...prevData,
-//       [name]: value,
-//     }));
-//         console.log(inputs);
-//   };
-
-//   const handleChangeFile = (event) => {
-//     const file = event.target.files[0];
-//     setFile(file);
-//   }
-
-//   const handleSubmit = async (event) => {
-//     event.preventDefault();
-//     const formDataToSend = new FormData();
-
-//     formDataToSend.append('name_pg', inputs.name_pg);
-//     formDataToSend.append('mail_pg', inputs.mail_pg);
-//     formDataToSend.append('number_pg', inputs.number_pg);
-//     formDataToSend.append('phone_pg', inputs.phone_pg);
-//     formDataToSend.append('name_lg', inputs.name_lg);
-//     formDataToSend.append('dateInscription_pg', inputs.dateInscription_pg);
-//     formDataToSend.append('payment_pg', inputs.payment_pg);
-//     formDataToSend.append('photo_pg', file);
-
-//     try {
-//       const response = await axios.post('http://localhost:8081/Create_participant_game', formDataToSend, {
-//         headers: {
-//           'Content-Type': 'multipart/form-data',
-//         },
-//       });
-
-//       if (response.status === 200) {
-//         console.log('Formulaire soumis avec succès !');
-//         setFormStatus('success'); // Définition de l'état de succès
-//         // Réinitialisez le formulaire ou effectuez d'autres actions nécessaires
-//       } else {
-//         console.error('Erreur lors de la soumission du formulaire.');
-//         setFormStatus('error'); // Définition de l'état d'erreur
-//       }
-//     } catch (error) {
-//       console.error('Erreur lors de la soumission du formulaire :', error);
-//       setFormStatus('error'); // Définition de l'état d'erreur en cas d'erreur
-//     }
-//   };
-
-//   return (
-//     <div>
-//       {formStatus === 'success' ? ( // Affichage de la page de succès en cas de succès
-//         <div>
-//           <h2>Formulaire soumis avec succès !</h2>
-//           {/* Vous pouvez afficher un message de réussite ou rediriger l'utilisateur vers une autre page ici */}
-//         </div>
-//       ) : formStatus === 'error' ? ( // Affichage de la page d'erreur en cas d'erreur
-//         <div>
-//           <h2>Erreur lors de la soumission du formulaire.</h2>
-//           {/* Vous pouvez afficher un message d'erreur ici */}
-//         </div>
-//       ) : (
-//         <div>
-//           <h2 className="form-title">Participez à notre jeu concours !</h2>
-
-//           <div className="form-container">
-//             <div className="gifImage-container">
-//               <img src={gifImage} alt="GIF" className="left-image" />
-//             </div>
-
-//             <form onSubmit={handleSubmit} className="form-wrapper">
-//             <div className="input-section">
-//             <div className="input-group">
-//               <label>Nom :</label>
-//               <input
-//                 type="text"
-//                 name="name_pg"
-//                 value={inputs.name_pg}
-//                 onChange={handleInputChange}
-//                 required
-//               />
-//             </div>
-            
-//             <div className="input-group">
-//               <label>Email :</label>
-//               <input
-//                 type="email"
-//                 name="mail_pg"
-//                 value={inputs.mail_pg}
-//                 onChange={handleInputChange}
-//                 required
-//               />
-//             </div>
-//             <div className="input-group">
-//               <label>Numéro de Téléphone :</label>
-//               <input
-//                 type="tel"
-//                 name="phone_pg"
-//                 value={inputs.phone_pg}
-//                 onChange={handleInputChange}
-//                 required
-//               />
-//             </div>
-//             <div className="input-group">
-//               <label>Date d'inscription :</label>
-//               <input
-//                 type="date"
-//                 name="dateInscription_pg"
-//                 value={inputs.dateInscription_pg}
-//                 onChange={handleInputChange}
-//                 required
-//               />
-//             </div>
-//           </div>
-//           <div className="input-section">
-//             <div className="input-group">
-//               <label>Photos :</label>
-//               <input
-//                 type="file"
-//                 name="photo_pg"
-//                 onChange={handleChangeFile}
-//                 accept="image/*"
-//                 //required
-//               />
-//             </div>
-//             <div className="input-group">
-//               <label>Concours :</label>
-//               <select
-//                 name="name_lg"
-//                 value={inputs.name_lg}
-//                 onChange={handleInputChange}
-//                 required
-//               >
-//                 <option value="">Sélectionnez un type de concours</option>
-//                 <option value="Call of duty">Call of duty</option>
-//                 <option value="Blur">Blur</option>
-//                 <option value="Free Fire">Free Fire</option>
-//                 <option value="FIFA">FIFA</option>
-//                 <option value="Escape Game">Escape Game</option>
-//                 <option value="Hackaton">Hackaton</option>
-//                 <option value="Concours Projet Numerique">Concours Projet Numerique</option>
-//               </select>
-//             </div>
-//             <div className="input-group">
-//               <label>Paiement:</label>
-//               <select
-//                 name="payment_pg"
-//                 value={inputs.payment_pg}
-//                 onChange={handleInputChange}
-//                 required
-//               >
-//                 <option value="">Sélectionnez un type de concours</option>
-//                 <option value="Espece">Espece</option>
-//                 <option value="Mobile Money">Mobile Money</option>
-//                 <option value="Carte">Carte</option>
-//               </select>
-//             </div>
-//             <div className="input-group">
-//               <label>Nombre de Participant :</label>
-//               <input
-//                 type="number"
-//                 name="number_pg"
-//                 value={inputs.number_pg}
-//                 onChange={handleInputChange}
-//                 required
-//               />
-//             </div>
-//           </div>
-//               <button className="bouton-participer" type="submit">
-//                 PARTICIPER
-//               </button>
-//             </form>
-//           </div>
-//         </div>
-//       )}
-//     </div>
-//   );
-// }
-
 export default Jeu;
-

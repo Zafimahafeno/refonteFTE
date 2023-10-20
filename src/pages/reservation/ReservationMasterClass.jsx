@@ -19,6 +19,8 @@ import Modal from '../../components/modal/Modal';
 import Autocomplete from '../../components/drowpDown/Autocomplete';
 import PlaceView from './PlaceView';
 import Reservation from './Reservation';
+import axios from 'axios';
+import './modal/Modalpage.css';
 
 const videos = [
   {
@@ -43,6 +45,160 @@ const videos = [
     img: "https://www.tennisworldfr.com/imge/24969/novak-djokovic-bat-tous-les-records-il-est-destine-a-eclipser-tous-les-autres.webp"
   }
 ];
+
+function StandForm({ handleClose }) {
+    const [formData, setFormData] = useState({
+      name_pvi: '',
+      phone_pvi: '',
+      mail_pvi: '',
+      payment_pvi: '',
+      date_pvi: '',
+      number_pvi: '',
+      theme: '',
+    });
+  
+    const [successMessage, setSuccessMessage] = useState(null);
+    const [errorMessage, setErrorMessage] = useState(null);
+  
+    const handleInputChange = (e) => {
+      const { name, value } = e.target;
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    };
+  
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      const formDataToSend = new FormData();
+      for (let key in formData) {
+        formDataToSend.append(key, formData[key]);
+      }
+      console.log(formData);
+  
+      axios.post('http://localhost:8081/Create_Reservation_Place', formData)
+        .then((response) => {
+          if (response.data.succee) {
+            setSuccessMessage(response.data.succee);
+            setErrorMessage(null);
+          } else {
+            setErrorMessage('Erreur lors du reservation de place.');
+            setSuccessMessage(null);
+          }
+        })
+        .catch((error) => {
+          console.error(error);
+          setErrorMessage('Erreur lors du reservation de place pour la Master Class.');
+          setSuccessMessage(null);
+        });
+    };
+  
+    return (
+      <div className="centre-form">
+        <form onSubmit={handleSubmit}>
+         
+          <div className="formgroup">
+            <div className="inputgroup">
+              <label>Veuillez entrer votre nom:</label>
+              <input
+                type="text"
+                name="name_pvi"
+                value={formData.name_pvi}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+          </div>
+          <div className="formgroup">
+            <div className="inputgroup">
+              <label>Veuillez entrer votre contact:</label>
+              <input
+                type="text"
+                name="phone_pvi"
+                value={formData.phone_pvi}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+          </div>
+          <div className="formgroup">
+            <div className="inputgroup">
+              <label>Votre adresse e-mail:</label>
+              <input
+                type="email"
+                name="mail_pvi"
+                value={formData.mail_pvi}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+          </div>
+          <div className="formgroup">
+            <div className="inputgroup">
+              <label>Mode de paiement :</label>
+              <select
+                name="payment_pvi"
+                value={formData.payment_pvi}
+                onChange={handleInputChange}
+                required
+              >
+                <option value="">Sélectionnez une méthode de paiement</option>
+                <option value="Espece">Espece</option>
+                <option value="Mobile Money">Mobile Money</option>
+                <option value="Carte">Carte</option>
+              </select>
+            </div>
+            <div className="formgroup">
+            <div className="inputgroup">
+              <label>Date de réservation:</label>
+              <input
+                type="date"
+                name="date_pvi"
+                value={formData.date_pvi}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+          </div>
+          <div className="formgroup">
+            <div className="inputgroup">
+              <label>Nombre de place:</label>
+              <input
+                type="number"
+                name="number_pvi"
+                value={formData.number_pvi}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+          </div>
+          <div className="formgroup">
+          <div className="inputgroup">
+              <label>Theme du Master Class :</label>
+              <select
+                name="theme"
+                value={formData.theme}
+                onChange={handleInputChange}
+                required
+              >
+                <option value="">Sélectionnez le thème selon les dates du Master Class</option>
+                <option value="Theme1">Theme1</option>
+                <option value="Theme2">Theme2</option>
+                <option value="Theme3">Theme3</option>
+              </select>
+            </div>
+          </div>
+          </div>
+        </form>
+        
+        <input onClick={handleClose} type='submit' value={'Annuler'} style={{background:'red'}} />
+        <input onClick={handleSubmit} type='submit' value={'Réserver'} style={{background: '#0066ff',}} />
+        {successMessage && <div className="success-message">{successMessage}</div>}
+        {errorMessage && <div className="error-message">{errorMessage}</div>}
+      </div>
+    );
+  }
+
 
 function ReservationMasterClass() {
   const [isPlaying, setIsPlaying] = useState(null);
@@ -99,15 +255,6 @@ function ReservationMasterClass() {
         }
     }
 
-    const genres = ['Homme', 'Femme'];
-    const [sexe, setSexe] = useState('Choisir votre sexe ...')
-
-    const payement = ['Orange money', 'Especes'];
-    const [paye, setPaye] = useState('Choisir mode paiement ...')
-
-    const themes = ['one', 'two', 'three', 'four', 'five', 'six']
-    const [theme, setTheme] = useState('Choisir un theme ...')
-
     
     const setItem=(value)=>{
         const test = selected.filter(id => id.id===value.id)
@@ -131,59 +278,14 @@ function ReservationMasterClass() {
     
   return (
     <div className='reservationMasterClass'>
+        
         <Sidebar />
         <Modal open={open}>
-            <div className="addreservation">
-                  <div style={{
-                      width: '100%',
-                      textAlign: 'center',
-                      fontSize: 25,
-                      marginBlock:10,
-                  }}>Réservation Place</div>
-                  <div className='form'>
-                    <input 
-                        type="text" 
-                        name="nom" 
-                        placeholder='Entrer votre nom ...' 
-                    />
-                    <input 
-                        type="number" 
-                        name="contact" 
-                        placeholder='Entrer votre contact ...' 
-                    />
-                    <div style={{ height: 40, width: '43%',}}>
-                    <Autocomplete 
-                        items={genres} 
-                        selected={sexe} 
-                        setSelected={setSexe} 
-                    />
-                    </div>
-                    <div style={{ height: 40, width: '43%',}}>
-                    <Autocomplete 
-                        items={themes}
-                        selected={theme} 
-                        setSelected={setTheme} 
-                    />
-                    </div>
-                    <input
-                        type="text"
-                        name="nbplace"
-                        placeholder='Entrer votre nb de place ...'
-                        value={`${nb} places`}
-                        readOnly
-                    />
-                    <div style={{ height: 40, width: '43%',}}>
-                    <Autocomplete 
-                        items={payement} 
-                        selected={paye} 
-                        setSelected={setPaye} 
-                    />
-                    </div>
-                  </div>
-                  <input onClick={handleClose} type='submit' value={'Annuler'} style={{background:'red'}} />
-                  <input onClick={handleClose} type='submit' value={'Réserver'} style={{background: '#0066ff',}} />
+            <div className="adreservation">
+            <StandForm handleClose={handleClose} />
             </div>
         </Modal>
+
         <div className='content'>
             <div className="contentheader">
                 <div className='title'>

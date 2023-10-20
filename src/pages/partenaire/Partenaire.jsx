@@ -71,7 +71,7 @@ const Partenariat = () => {
                     exceptionnelle auprès d'une audience engagée et passionnée.  
                    </div>
                    <div className="pt-bouton">
-                       <a href=""> Je participe </a>
+                       <a href="./PartenaireForm"> Je participe </a>
                    </div>
                
            </div>
@@ -85,7 +85,7 @@ const Partenariat = () => {
                     et profitez d'une visibilité auprès d'une audience engagée. 
                    </div>
                    <div className="pt-bouton">
-                       <a href=""> Je participe </a>
+                       <a href="./PartenaireForm"> Je participe </a>
                    </div>
                
                
@@ -101,7 +101,7 @@ const Partenariat = () => {
                     appréciable pour concrétiser notre vision commune.
                    </div>
                    <div className="pt-bouton">
-                       <a href=""> Je participe </a>
+                       <a href="./PartenaireForm"> Je participe </a>
                    </div>
                
            </div>
@@ -116,7 +116,7 @@ const Partenariat = () => {
 
                    </div>
                    <div className="pt-bouton">
-                       <a href=""> Je participe </a>
+                       <a href="./PartenaireForm"> Je participe </a>
                    </div>
                
            </div> 

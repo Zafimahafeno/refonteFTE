@@ -14,7 +14,7 @@ const Dropdown2 = () =>{
             className={ click? 'dropdown-menu clicked' : 'dropdown-menu '}>
                 <li>
                 <Link
-                  to="/Reservation"
+                  to="/ReservationMasterClass"
                   className="dropdown-link"
                   onClick={setClick}
                 >

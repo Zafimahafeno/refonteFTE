@@ -1,6 +1,154 @@
-.jeu{
-    width: 100%;
+/* Jeu.css */
+.jeu-content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f5f5f5; /* Ajout d'une couleur de fond */
 }
-.jeu img{
-    width: 50%;
+
+/* Styles pour le menu de jeux */
+.menu-jeux {
+  display: flex;
+  gap: 50px;
+  margin-top: 20px;
+  background-color: #fff; /* Couleur de fond */
+  padding: 10px; /* Espace intérieur */
+  border-radius: 50px; /* Coins arrondis */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+.jeu-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px;
+  color: #333; /* Couleur du texte */
+  text-transform: uppercase;
+  transition: font-weight 0.3s;
+}
+
+.jeu-button:hover {
+  font-weight: bold;
+  color: #007bff; /* Couleur au survol */
+}
+
+/* Style du jeu actif */
+.jeu-button.active {
+  font-weight: bold;
+  color: #007bff;
+}
+
+/* Styles pour le slider vertical */
+.slider-container {
+  position: relative;
+  width: 300px;
+  margin-top: 20px;
+  border-radius: 50px; /* Coins arrondis */
+  overflow: hidden;
+  border-color:black;
+}
+
+/* Styles pour les flèches de navigation "Up Arrow" et "Down Arrow" */
+.up-arrow,
+.down-arrow {
+  font-size: 24px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #007bff; /* Couleur de fond */
+  color: #fff; /* Couleur du texte */
+  border-radius: 50%; /* Coins arrondis */
+  transition: background-color 0.3s, transform 0.3s, bottom 0.3s; /* Ajout de la transition */
+}
+
+.up-arrow {
+  bottom: 10px; /* Ajustez cette valeur pour placer "Up Arrow" plus haut */
+  transform-origin: center top;
+}
+
+.down-arrow {
+  bottom: 10px; /* Ajustez cette valeur pour placer "Down Arrow" plus bas */
+  transform-origin: center top;
+}
+
+
+.up-arrow:hover {
+  background-color: #0056b3; /* Couleur au survol */
+  transform: translateY(-2px);
+}
+
+.down-arrow:hover {
+  background-color: #0056b3; /* Couleur au survol */
+  transform: translateY(2px);
+}
+
+.game-name {
+  text-align: center;
+  padding: 10px;
+  background-color: #fff; /* Couleur de fond */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  width: 100%;
+  transition: transform 0.3s, filter 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+.game-name img {
+  max-width: 100px;
+  max-height: 100px;
+  margin-bottom: 10px;
+}
+
+.game-name h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.game-name p {
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Style du nom du jeu actif dans le slider */
+.game-name.active {
+  background-color: transparent;/* Couleur de fond */
+  color: #1949ce; /* Couleur du texte */
+  transform: scale(1.1);
+}
+
+/* Centrer l'élément actif du slider vertical */
+.slick-slide.slick-center .game-name.active {
+  transform: translateY(0);
+}
+
+/* Styles pour le bouton "Participer" */
+.participer-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.participer-button:hover {
+  background-color: #0056b3;
 }

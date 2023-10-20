@@ -1,0 +1,283 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+   background: url('./13295064_5172658.jpg') center/cover no-repeat; 
+  height: 100vh;
+  
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container {
+  background: rgba(34, 33, 34, 0.15); 
+  /* border: 1px solid rgba(255, 255, 255, 0.3); Bordure légère */
+  border-radius: 50px;
+  /* Réduisez le padding pour l'exemple */
+  /* background-color: rgba(66, 62, 62, 0.15);  */
+  backdrop-filter: blur(12px); /* Effet de flou */
+  /* box-shadow: 0px 4px 10px rgba(138, 136, 136, 0.1); */
+  animation: fadeInUp 0.10s ease;
+  display: flex;
+  flex-direction: row;
+  
+  
+  margin: 3% 0 0 15%;
+  overflow: visible;
+  height: 80%;
+  width: 80% ;
+  box-shadow:
+  inset -4px -4px 10px rgba(17, 16, 16, 0.2),
+  inset 4px 4px 10px rgba(255, 255, 255, 0.5);
+}
+.left-image {
+  overflow: visible;
+  object-fit: cover;
+  width: 80%;
+  height: 90%;
+  margin-left: 10%; /* Enlever la marge */
+  
+ 
+}
+/* Style pour l'option "Sélectionnez un type de concours" */
+
+.form-title {
+  margin-top: 1%;
+  text-align: center;
+  color: #ff9800;
+  font-size: 40px;
+  margin-top: 7%;
+  transition: color 0.3s;
+  
+}
+.gifImage-container {
+   margin-left: 4%;
+   flex-basis: 40%;
+}
+
+/* .gif-container img {
+  background-color: rgb(22, 216, 216);
+  border-radius: 50px;
+  max-width: 50%; /* Ajuster la largeur de l'image 
+  max-height: 80%; /* Ajuster la hauteur de l'image 
+  
+
+} */
+.text-container{
+  color:#dbd4d4 !important;
+}
+
+ 
+
+.form-wrapper
+{
+ flex-basis: 70%;
+ margin: 2% 10%;
+}
+.input-group {
+  color: #dbd4d4;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 19px;
+  margin: 0 5px;
+  margin-bottom: 10px;
+  
+}
+
+/* Styles pour le menu déroulant */
+
+
+label {
+  color:#dbd4d4
+}
+
+select {
+  /* width: 100%;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  color: #333; */
+  padding: 5.5px;
+  border: transparent;
+  border-radius: 70px; /* Rounded corners */
+  background-color: rgba(36, 25, 136, 0.7); /* Semi-transparent background */
+  backdrop-filter: blur(22px);
+  font-size: 18px;
+  width: 100%;
+  margin-top: 7px;
+  transition: background-color 0.3s;
+}
+
+/* Style pour les options du menu déroulant */
+select option {
+  background-color: #f8f8f8;
+  color: #333;
+  padding: 5px;
+}
+
+/* Style pour le menu déroulant lorsqu'il est en focus (sélectionné) */
+select:focus {
+  outline: none;
+  border-color: #007bff; /* Couleur de la bordure lorsque le menu déroulant est en focus */
+}
+
+.input-container {
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.input-container label {
+  font-weight: bold;
+  color: rgb(196, 45, 45);
+  margin-bottom: 10px;
+  font-size: 20px;
+  
+  transition: color 0.3s;
+}
+.label-spacing {
+  margin-bottom: 10px; /* Ajouter de l'espace en bas de chaque étiquette */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="tel"],
+input[type="file"],
+textarea {
+  padding: 7.5px;
+  border: transparent;
+  border-radius: 70px; /* Rounded corners */
+  background-color: rgba(36, 25, 136, 0.7); /* Semi-transparent background */
+  backdrop-filter: blur(22px);
+  font-size: 18px;
+  width: 100%;
+  margin-top: 7px;
+  transition: background-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="file"]:focus,
+textarea:focus {
+  outline: none;
+  background-color: rgb(238, 232, 232); /* Lighter background on focus */
+}
+
+.buton-participer{
+  display: inline-fle;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 19px;
+  padding: 10px 20px;
+  background-color: #0dc5f3; /* Couleur de fond de base */
+  color: #ffffff; /* Couleur du texte */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  margin-left: 10px; /* Espace entre les boutons */
+}
+.buton-participer:hover{
+  background-color: #ff4500; /* Changement de couleur de fond au survol */
+}
+.bouton-participer {
+  animation: coolAnimationParticiper 1s ease-in-out infinite alternate;
+  border-radius: 50px;
+  width: 100%;
+  padding: 1.4%;
+  margin-top: 5%;
+  background-color: #ff6600; 
+  border-color: transparent;
+}
+
+@keyframes coolAnimationParticiper {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 5px rgba(255, 102, 0, 0.7)
+  }
+  100% {
+    transform: scale(1.05); /* Légère agrandissement au cours de l'animation */
+    box-shadow: 0 0 20px rgba(255, 102, 0, 0.9);
+  }
+}
+
+
+
+
+
+/* Message Panel */
+
+.message-panel {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 200px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 4px 10px rgba(168, 82, 82, 0.1);
+  width: 30%;
+  margin-left: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.message-panel p {
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+}
+
+/* Media queries pour rendre le formulaire responsive */
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .form-container {
+    width: 1%;
+    margin-top: 20px;
+  }
+
+  .message-panel {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 20px;
+  }
+}
+
+
+
+/* Animation de survol sur les champs */
+
+.input-container label:hover {
+  color: #0b71c4;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* JeuxConcoursForm.css */
+
+/* ... (vos styles existants) */
+
+
+
+
+
+
+}

@@ -3,13 +3,12 @@
     z-index: 1;
 }
 .background {
-    background: url(../../img/25328.jpg);
-    background-size: cover;
+
     height: 80vh;
-    
+    background-color: rgba(3, 1, 23, 0.8);
  
 }
-/* .background img{
+.background img{
     object-fit: cover;
     width: 100%;
     height: 80vh;
@@ -17,16 +16,13 @@
   
     opacity: 0.2;
    
-} */
-.hackathon-content{
-    background-color: rgba(3, 1, 23, 0.8);
-    height: 100%;
 }
+
 
 .contenu{
     display: flex;
     flex-direction: row;
-    /* position: absolute; */
+    position: absolute;
     bottom: 35%;
     
 }
@@ -56,7 +52,7 @@
     font-size: 42px;
     margin: 0;
 }
-.button {
+.bouton {
     padding: 3% 6%;
     margin-top: 4%;
    
@@ -67,7 +63,7 @@
     cursor: pointer;
   }
   
-.button:hover {
+.bouton:hover {
     background-color: rgb(80, 54, 197);
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   }
@@ -78,24 +74,29 @@
       
      
     }
-    .contenu{
-       padding-top: 15%;
+    .background img{
+        
+        height: 60vh;
     }
-    
   }
   @media screen and (max-width : 550px)and (min-width : 451px){
     .background {
 
-        height: 50vh;
+        height: 60vh;
       
      
     }
-
+    .background img{
+        
+        height: 60vh;
+    }
     .contenu{
-        padding-top: 10%;
+        
+        bottom: 55%;
+        
     }
     .content{
-        margin:0;
+        margin-top: 0;
     }
     .content h2{
         
@@ -118,10 +119,13 @@
       
      
     }
-  
+    .background img{
+        
+        height: 80vh;
+    }
     .contenu{
         flex-direction: column;
-        padding-top: 10%;
+        bottom: 40%;
         
     }
     .ordinateur{
